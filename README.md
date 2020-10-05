@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300" height="100" src="https://i.imgur.com/Jwv9Q8D.png">
+  <a href="https://github.com/therealwalim/gegevens-verstrekken"><img width="300" height="100" src="https://i.imgur.com/Jwv9Q8D.png"></a>
 </p>
 
 # Mise à disposition de données importantes
