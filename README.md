@@ -26,7 +26,7 @@
   * Sauvegarde d'albums pour les images.
   * Sauvegarde d'e-book.
   * Géolocalisation de l'appareil.
-  * Gestion des paramètres.
+  * Accéder aux paramètres.
   * Gestion du profile.
 
 Il est essentiel aussi de créer une plateforme web pour l'utilisateur afin qu'il puisse récupérer ses données et les mettre à jour qui contiendra pratiquement les mêmes fonctionnalités que l'application mobile.
@@ -37,6 +37,7 @@ Il est essentiel aussi de créer une plateforme web pour l'utilisateur afin qu'i
   * Gestion des données
   * Historique
   * Gestion des packs
+  * Gestion des paramètres.
 ## Technologies utilisées :
 * [React Native](https://reactnative.dev/docs/getting-started)
 * [Laravel](https://laravel.com/)
