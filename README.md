@@ -7,6 +7,7 @@
 ## Objectifs poursuivis : 
 * Concevoir un utilitaire mobile de mise à disposition de données importantes.
 * Mettre à disposition des données importantes se trouvant sur l'appareil accessible sur la plateforme web.
+* Manipuler des données extraites afin d'en multiplier les usages.
 * Pouvoir retrouver des contacts en cas de vol ou de perte d'appareil.
 * Mettre en applications les connaissances apprises à l'école.
 
