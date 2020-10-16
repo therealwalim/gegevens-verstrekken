@@ -39,15 +39,17 @@ Il est essentiel aussi de créer une plateforme web pour l'utilisateur afin qu'i
   * Historique
   * Gestion des packs
   * Gestion des paramètres.
+
+## Schéma de la base de données
+<p align="center">
+  <a href="https://github.com/therealwalim/gegevens-verstrekken"><img height="400px" src="https://i.imgur.com/sZSv7Md.png"></a>
+</p>
+
 ## Technologies utilisées :
 * [React Native](https://reactnative.dev/docs/getting-started)
 * [Laravel](https://laravel.com/)
 * [Vue JS](https://vuejs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 
-## Schéma de la base de données
-<p align="center">
-  <a href="https://github.com/therealwalim/gegevens-verstrekken"><img height="400px" src="https://i.imgur.com/sZSv7Md.png"></a>
-</p>
 ## Librairies utilisées : (À définir)
 ## Ressources : (À définir)
