@@ -45,5 +45,9 @@ Il est essentiel aussi de créer une plateforme web pour l'utilisateur afin qu'i
 * [Vue JS](https://vuejs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 
+## Schéma de la base de données
+<p align="center">
+  <a href="https://github.com/therealwalim/gegevens-verstrekken"><img height="400px" src="https://i.imgur.com/sZSv7Md.png"></a>
+</p>
 ## Librairies utilisées : (À définir)
 ## Ressources : (À définir)
