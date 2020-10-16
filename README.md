@@ -45,6 +45,8 @@ Il est essentiel aussi de créer une plateforme web pour l'utilisateur afin qu'i
   <a href="https://github.com/therealwalim/gegevens-verstrekken"><img height="400px" src="https://i.imgur.com/sZSv7Md.png"></a>
 </p>
 
+## Prototype de l'application disponible sur [le lien](https://xd.adobe.com/view/eb8ec004-9e82-445c-5068-e5893e1a0db2-9dbf/?fullscreen)
+
 ## Technologies utilisées :
 * [React Native](https://reactnative.dev/docs/getting-started)
 * [Laravel](https://laravel.com/)
