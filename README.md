@@ -17,7 +17,6 @@
 * Côté utilisateur, une application mobile qui contiendra les fonctionnalités suivantes :
   * Système d'authentification classique avec adresse e-mail.
   * Possibilité de s'authentifier à l'aide d'une application tierse (Facebook, Google ou autre).
-  * Authentification multifacteurs (2FA).
   * Système de vérification de comptes.
   * Système de notifications par e-mail.
   * Synchronisation des contacts et des messages.
