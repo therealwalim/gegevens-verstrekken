@@ -26,7 +26,6 @@
   * Sauvegarde de fichiers.
   * Sauvegarde d'albums pour les images.
   * Sauvegarde d'e-book.
-  * Géolocalisation de l'appareil.
   * Accéder aux paramètres.
   * Gestion du profile.
 
