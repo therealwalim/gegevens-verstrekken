@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateFilesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'users';
+    public $tableName = 'files';
 
     /**
      * Run the migrations.
-     * @table users
+     * @table files
      *
      * @return void
      */
@@ -22,13 +22,13 @@ class CreateUsersTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 45);
-            $table->string('username', 45);
-            $table->string('email', 45);
-            $table->string('password', 45);
-            $table->tinyInteger('is_verified')->default('0');
-            $table->string('phone', 45)->nullable();
-            $table->string('verification_code', 45)->nullable();
+            $table->string('path', 45)->nullable();
+            $table->string('type', 45)->nullable();
+            $table->integer('folders_id');
+
+
+            $table->foreign('folders_id')
+                ->references('id')->on('folders');
         });
     }
 
