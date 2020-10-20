@@ -22,12 +22,12 @@ class CreateFilesTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->string('path', 45)->nullable();
+            $table->string('path', 255)->nullable();
             $table->string('type', 45)->nullable();
-            $table->integer('folders_id');
+            $table->integer('folder_id')->unsigned();
 
 
-            $table->foreign('folders_id')
+            $table->foreign('folder_id')
                 ->references('id')->on('folders');
         });
     }

@@ -23,10 +23,11 @@ class CreateParamsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
             $table->enum('lang', ['fr', 'en'])->default('en');
-            $table->string('display_mode', 45)->default('light');
-            $table->integer('users_id');
+            $table->enum('display_mode', ['dark', 'light'])->default('light');
+            $table->integer('user_id')->unsigned();
 
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreign('user_id')
+                ->references('id')->on('users');
         });
     }
 

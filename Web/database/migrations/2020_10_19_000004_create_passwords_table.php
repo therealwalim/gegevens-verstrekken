@@ -22,11 +22,11 @@ class CreatePasswordsTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->string('website', 45)->nullable();
+            $table->string('website', 100)->nullable();
             $table->string('password', 45)->nullable();
-            $table->integer('users_id');
+            $table->integer('user_id')->unsigned();
 
-            $table->foreign('users_id')
+            $table->foreign('user_id')
                 ->references('id')->on('users');
         });
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('contact','App\Http\Controllers\ContactController');
+Route::apiResource('message','App\Http\Controllers\MessageController');
+Route::apiResource('note','App\Http\Controllers\NoteController');
+Route::apiResource('param','App\Http\Controllers\ParamController');
+Route::apiResource('user','App\Http\Controllers\UserController');
+Route::apiResource('file','App\Http\Controllers\FileController');
+Route::apiResource('password','App\Http\Controllers\PasswordController');

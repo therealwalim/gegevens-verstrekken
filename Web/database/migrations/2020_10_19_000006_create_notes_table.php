@@ -22,11 +22,12 @@ class CreateNotesTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 45)->nullable();
-            $table->string('content', 45)->nullable();
-            $table->integer('users_id');
+            $table->string('title', 50)->nullable();
+            $table->string('content', 255)->nullable();
+            $table->integer('user_id')->unsigned();
 
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreign('user_id')
+                ->references('id')->on('users');
         });
     }
 
