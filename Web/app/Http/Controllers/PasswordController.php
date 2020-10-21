@@ -42,7 +42,8 @@ class PasswordController extends Controller
      */
     public function show($id)
     {
-        //
+        $result = Password::find($id);
+        return $result;
     }
 
     /**
