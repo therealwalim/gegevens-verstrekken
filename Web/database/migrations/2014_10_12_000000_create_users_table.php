@@ -23,12 +23,13 @@ class CreateUsersTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 45);
-            $table->string('username', 45);
+            $table->string('username', 45)->nullable();
             $table->string('email', 45);
-            $table->string('password', 45);
+            $table->string('password', 255);
             $table->tinyInteger('is_verified')->default('0');
             $table->string('phone', 45)->nullable();
             $table->string('verification_code', 45)->nullable();
+            $table->timestamps();
         });
     }
 
