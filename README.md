@@ -53,3 +53,4 @@ Il est essentiel aussi de créer une plateforme web pour l'utilisateur afin qu'i
 
 ## Librairies utilisées : (À définir)
 ## Ressources : (À définir)
+* [Laravel Sanctum](https://laravel.com/docs/8.x/sanctum)
