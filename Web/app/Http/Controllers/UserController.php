@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -27,13 +28,43 @@ class UserController extends Controller
     {
         $user = new User();
         $user->name = $request->name;
-        $user->password = bcrypt($request->password);
+        $user->password = Hash::make($request->password);
         $user->email = $request->email;
+        $user->verification_code = sha1(time());
         $user->save();
 
+        if ($user != null){
+            //Send Email
+            MailController::sendSignupEmail($user->name, $user->email,$request->password, $user->verification_code);
+
+            //Show Message
+            return response()->json([
+                "code" => 200,
+                "message" => "User created successfully"
+            ]);
+        }
+
+        //Show Error Message
         return response()->json([
             "code" => 200,
-            "message" => "User created successfully"
+            "message" => "Failed to create user"
+        ]);
+    }
+
+    public function verifyUser(){
+        $verification_code = \Illuminate\Support\Facades\Request::get('code');
+        $user = User::where(['verification_code' => $verification_code])->first();
+        if($user != null){
+            $user->is_verified = 1;
+            $user->save();
+            return response()->json([
+                "code" => 200,
+                "message" => "Account verified"
+            ]);
+        }
+        return response()->json([
+            "code" => 200,
+            "message" => "Failed to verify the user"
         ]);
     }
 

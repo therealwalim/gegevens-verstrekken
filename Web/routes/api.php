@@ -42,11 +42,13 @@ Route::post('/sanctum/token', function (Request $request) {
 
     $user = User::where('email', $request->email)->first();
 
-    if (! $user || ! Hash::check($request->password, $user->password)) {
+    if (! $user || ! Hash::check($request->password, $user->password) || $user->is_verified === 0) {
         throw ValidationException::withMessages([
             'email' => ['The provided credentials are incorrect.'],
         ]);
     }
+
+
 
     $token = $user->createToken($request->device_name)->plainTextToken;
 
@@ -59,12 +61,14 @@ Route::post('/sanctum/token', function (Request $request) {
 
 });
 
+Route::get('/verify',[App\Http\Controllers\UserController::class,'verifyUser']);
+Route::apiResource('users','App\Http\Controllers\UserController');
+
 Route::middleware('auth:sanctum')->group( function () {
     Route::apiResource('contact','App\Http\Controllers\ContactController');
     Route::apiResource('message','App\Http\Controllers\MessageController');
     Route::apiResource('note','App\Http\Controllers\NoteController');
     Route::apiResource('param','App\Http\Controllers\ParamController');
-    Route::apiResource('users','App\Http\Controllers\UserController');
     Route::apiResource('file','App\Http\Controllers\FileController');
     Route::apiResource('password','App\Http\Controllers\PasswordController');
 });

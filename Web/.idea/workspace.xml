@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,10 +23,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/PasswordValidationRules.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/ResetUserPassword.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/UpdateUserPassword.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Actions/Fortify/UpdateUserProfileInformation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/SignupMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/fortify.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_200000_add_two_factor_columns_to_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/mail/signup-email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Conception/Providata.xd" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/Providata.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Conception/database_modelisation.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/database_modelisation.mwb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Conception/database_modelisation.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/database_modelisation.mwb.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Conception/database_schema.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/database_schema.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +171,11 @@
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/laracademy/generators" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
     </include_path>
   </component>
   <component name="ProjectId" id="1im33whyFqhTHqaYUUbt5VvkQfa" />
@@ -188,7 +215,10 @@
       <workItem from="1602498749791" duration="4763000" />
       <workItem from="1603094146361" duration="10590000" />
       <workItem from="1603185942607" duration="15551000" />
-      <workItem from="1603271005391" duration="12116000" />
+      <workItem from="1603271005391" duration="12985000" />
+      <workItem from="1603443421024" duration="2241000" />
+      <workItem from="1603535403775" duration="4320000" />
+      <workItem from="1603564291624" duration="6691000" />
     </task>
     <servers />
   </component>
@@ -211,10 +241,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603297174308">
+    <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603564848163">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1603297174308" />
+    <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1603564848163" />
     <state x="385" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603103281346">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -223,5 +253,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1603294536448" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1603561017858">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1603561017858" />
   </component>
 </project>
