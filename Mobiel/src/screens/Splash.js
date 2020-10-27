@@ -16,10 +16,11 @@ export default class Splash extends Component {
                 }}
             >
                 <LottieView
-                    source={require('./assets/splash.json')}
+                    source={require('../assets/splash.json')}
                     autoPlay
                     loop={false}
                     speed={1.5}
+                    
                     imageAssetsFolder={'lottie/image'}
                 />
             </View>
