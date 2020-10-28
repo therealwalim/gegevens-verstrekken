@@ -19,7 +19,7 @@ export default class Splash extends Component {
                     source={require('../assets/splash.json')}
                     autoPlay
                     loop={false}
-                    speed={1.5}
+                    speed={2}
                     
                     imageAssetsFolder={'lottie/image'}
                 />

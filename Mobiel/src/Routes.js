@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { StyleSheet, Text, View, Button, TextInput, ActivityIndicator, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ActivityIndicator } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import { NavigationContainer } from '@react-navigation/native';
 import { AuthContext } from './providers/AuthProvider';
 import { AuthStack } from './screens/AuthStack';
 import { AppStack } from './screens/AppStack';
+import Splash from './screens/Splash';
 //import * as SecureStore from 'expo-secure-store';
 
 export default function Routes() {
@@ -13,7 +15,8 @@ export default function Routes() {
   useEffect(() => {
     // check if the user is logged in or not
     //SecureStore.getItemAsync('user')
-    AsyncStorage.getItem('user')
+    const timer = setTimeout(() => {
+      AsyncStorage.getItem('user')
       .then(userString => {
         if (userString) {
           // decode it
@@ -26,19 +29,18 @@ export default function Routes() {
       .catch(err => {
         console.log(err);
       })
+    }, 1500);
+    
   }, []);
 
   if (loading) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <ActivityIndicator size="large" />
-      </View>
-    )
+    // We haven't finished checking for the token yet
+    return <Splash />;
   }
 
   return (
-    <NavigationContainer>
-      {user ? <AppStack /> : <AuthStack />}
-    </NavigationContainer>
+      <NavigationContainer>
+        {user ? <AppStack /> : <AuthStack />}
+      </NavigationContainer>
   );
 }
