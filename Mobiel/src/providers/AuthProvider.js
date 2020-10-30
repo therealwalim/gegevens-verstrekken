@@ -31,10 +31,24 @@ export const AuthProvider = ({children}) => {
             setUser(userResponse);
             setError(null);
             AsyncStorage.setItem('user', JSON.stringify(userResponse));
+            console.log("User connected")
           })
           .catch(error => {
             const key = Object.keys(error.response.data.errors)[0];
             setError(error.response.data.errors[key][0]);
+          })
+        },register: (email,name,phone,password) => {
+          axios.post('/api/users', {
+            email,
+            name,
+            phone,
+            password,
+          })
+          .then(response => {
+            console.log(response.message)
+          })
+          .catch(error => {
+            console.log(error.response);
           })
         },
         logout: () => {
@@ -45,6 +59,7 @@ export const AuthProvider = ({children}) => {
             setUser(null);
             //SecureStore.deleteItemAsync('user')
             AsyncStorage.removeItem('user')
+            console.log("User disconnected")
           })
           .catch(error => {
             console.log(error.response);

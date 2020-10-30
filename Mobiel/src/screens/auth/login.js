@@ -51,6 +51,17 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems: 'center',
     justifyContent:'center'
+  },error:{
+    width: 300,
+    height: 35,
+    marginTop: 5,
+    marginBottom: 5,
+    borderRadius: 10,
+    backgroundColor: '#f56565',
+    elevation: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 
@@ -66,7 +77,7 @@ export default function login({navigation, image}) {
         <View style={styles.containerLog}>
           <Text style={styles.title}>Log In</Text>
           { error &&
-            <Text style={{ color: 'red', marginBottom: 24 }}>{ error }</Text>
+            <View style={styles.error}><Text style={{ color: 'white'}}>{ error }</Text></View>
           }
           <Text style={styles.label}>Email</Text>
           <TextInput
@@ -102,11 +113,13 @@ CSS :
 width: 224px;
 height: 41px;
 
-width: 224,
-height: 41,
-borderRadius: 5px,
-backgroundColor: '#4158d0',
+width: 317,
+height: 53,
+borderRadius: 10,
+backgroundColor: '#f56565',
 elevation: 1,
+
+
 
 
 */}

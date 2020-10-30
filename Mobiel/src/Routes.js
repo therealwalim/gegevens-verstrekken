@@ -9,12 +9,12 @@ import Splash from './screens/Splash';
 //import * as SecureStore from 'expo-secure-store';
 
 export default function Routes() {
-  const { user, setUser, login, logout } = useContext(AuthContext)
+  const { user, setUser, login, logout, register } = useContext(AuthContext)
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // check if the user is logged in or not
-    //SecureStore.getItemAsync('user')
+    //SecureStore.getItemAsync('user') if you're using expo
     const timer = setTimeout(() => {
       AsyncStorage.getItem('user')
       .then(userString => {

@@ -52,8 +52,8 @@ function SettingsScreen({ navigation }) {
 export const AppStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Dashboard" component={DashboardScreen} />
-      <Stack.Screen name="Settings" component={SettingsScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Dashboard" component={DashboardScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
     </Stack.Navigator>
   )
 }
