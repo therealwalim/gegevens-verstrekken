@@ -3,8 +3,26 @@ import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView } from "r
 import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import Header from '../../components/app/header'
+import BottomBar from '../../components/app/bottombar'
 
 axios.defaults.baseURL = 'http://10.0.2.2:8000';
+
+var {width, height} = Dimensions.get('window')
+
+const styles = StyleSheet.create({
+  container:{
+    backgroundColor:'#EEEEF1',
+    flex: 1,
+  },header:{
+    flex: .2
+  },content:{
+    flex: .6,
+    paddingLeft: 24,
+  },footer:{
+    flex: .2
+  }
+})
+
 
 export default function Home({ navigation }) {
     const { user, logout } = useContext(AuthContext)
@@ -27,10 +45,14 @@ export default function Home({ navigation }) {
     return (
       
         // Header component
-        <ScrollView style={{backgroundColor:'#EEEEF1'}}>
-            <Header name={user.email} />
-            {/* Disconnection button <Button title="Logout" onPress={() => logout()} /> */}
-        </ScrollView>
+        <View style={styles.container}>
+            <Header style={styles.header} name={user.email} />
+            {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
+            <ScrollView style={styles.content}>
+              <Text>Content</Text>
+            </ScrollView>
+            <BottomBar style={styles.footer} value={() => navigation.navigate('Settings')} />
+        </View>
 
         
         

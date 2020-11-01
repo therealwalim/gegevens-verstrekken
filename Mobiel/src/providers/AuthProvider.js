@@ -27,6 +27,7 @@ export const AuthProvider = ({children}) => {
             const userResponse = {
               email: response.data.user.email,
               token: response.data.token,
+              name: response.data.name,
             }
             setUser(userResponse);
             setError(null);
