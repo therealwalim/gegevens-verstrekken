@@ -22,26 +22,26 @@ const styles = StyleSheet.create({
 })
 
 
-export default function BottomBar({ value }) {
+export default function BottomBar({ navigation }) {
     return (
         <View style ={styles.footer}>
-            <TouchableHighlight style={styles.button} onPress={ () => console.log("Test")}>
+            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>
                 <Icon name="users" size={22} color="white" />
             </TouchableHighlight>
 
-            <TouchableHighlight style={styles.button}>
+            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>
                 <Icon name="mail" size={22} color="white" />
             </TouchableHighlight>
 
-            <TouchableHighlight style={styles.buttonActive}>
+            <TouchableHighlight style={styles.buttonActive} onPress={ () => navigation.navigate('Home')}>
                 <Icon name="home" size={22} color="white" />
             </TouchableHighlight>
 
-            <TouchableHighlight style={styles.button}>
+            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>
                 <Icon name="check-circle" size={22} color="white" />
             </TouchableHighlight>
 
-            <TouchableHighlight style={styles.button} onPress={value}>
+            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>
                 <Icon name="settings" size={22} color="white" />
             </TouchableHighlight>
         </View>
