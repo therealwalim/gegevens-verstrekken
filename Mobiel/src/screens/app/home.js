@@ -154,21 +154,21 @@ export default function Home({ navigation }) {
 
                 <View style={styles.CardElements}>
                   <TouchableHighlight style={styles.ContainerIcon}>
-                    <Icon name="key" size={32} color="#4158D0" />
+                    <Icon name="key" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Add Password</Text>
                 </View>
 
                 <View style={styles.CardElements}>
                   <TouchableHighlight style={styles.ContainerIcon}>
-                    <Icon name="globe" size={32} color="#4158D0" />
+                    <Icon name="globe" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Change Lang</Text>
                 </View>
 
                 <View style={styles.CardElements}>
                   <TouchableHighlight style={styles.ContainerIcon}>
-                    <Icon name="upload" size={32} color="#4158D0" />
+                    <Icon name="upload" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Upload File</Text>
                 </View>
@@ -179,21 +179,21 @@ export default function Home({ navigation }) {
               <View style={styles.CardSection}>
                 <View style={styles.CardElements}>
                   <TouchableHighlight style={styles.ContainerIconReverse}>
-                    <Icon name="image" size={32} color="white" />
+                    <Icon name="shield" size={26} color="white" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Password Manager</Text>
                 </View>
 
                 <View style={styles.CardElements}>
                   <TouchableHighlight style={styles.ContainerIconReverse}>
-                    <Icon name="grid" size={32} color="white" />
+                    <Icon name="grid" size={26} color="white" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Album</Text>
                 </View>
 
                 <View style={styles.CardElements}>
                   <TouchableHighlight style={styles.ContainerIconReverse}>
-                    <Icon name="folder" size={32} color="white" />
+                    <Icon name="folder" size={26} color="white" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Folder</Text>
                 </View>
