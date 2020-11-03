@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
         padding: 25,
         borderTopLeftRadius: 28,
         borderTopRightRadius: 28,
-        elevation: 2,
-        shadowColor: '#4158D0',
+        elevation: 50,
+        shadowColor: 'black',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent:'space-around'
@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
 export default function BottomBar({ navigation }) {
     return (
         <View style ={styles.footer}>
-            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>
+            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Contact')}>
                 <Icon name="users" size={22} color="white" />
             </TouchableHighlight>
 
-            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>
+            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Message')}>
                 <Icon name="mail" size={22} color="white" />
             </TouchableHighlight>
 
