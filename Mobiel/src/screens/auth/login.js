@@ -119,7 +119,4 @@ borderRadius: 10,
 backgroundColor: '#f56565',
 elevation: 1,
 
-
-
-
 */}

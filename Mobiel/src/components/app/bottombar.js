@@ -37,8 +37,8 @@ export default function BottomBar({ navigation }) {
                 <Icon name="home" size={22} color="white" />
             </TouchableHighlight>
 
-            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>
-                <Icon name="check-circle" size={22} color="white" />
+            <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Task')}>
+                <Icon name="clipboard" size={22} color="white" />
             </TouchableHighlight>
 
             <TouchableHighlight style={styles.button} onPress={ () => navigation.navigate('Settings')}>

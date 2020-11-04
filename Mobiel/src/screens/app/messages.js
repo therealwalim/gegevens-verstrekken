@@ -85,10 +85,7 @@ export default function Contact({ navigation }) {
               
               <View style={styles.CardContainer}>
                  <MessageCard />
-                 <MessageCard />
-                 <MessageCard />
-                 <MessageCard />
-                 <MessageCard />
+                 
               </View>
   
             </ScrollView>

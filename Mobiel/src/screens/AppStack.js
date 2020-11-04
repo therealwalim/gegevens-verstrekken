@@ -4,6 +4,8 @@ import Home from "./app/home";
 import Contact from "./app/contacts";
 import Settings from "./app/settings";
 import Message from "./app/messages";
+import Task from "./app/tasks";
+import Password from "./app/passwords";
 
 const Stack = createStackNavigator();
 
@@ -14,6 +16,8 @@ export const AppStack = () => {
       <Stack.Screen options={{headerShown: false}} name="Settings" component={Settings} />
       <Stack.Screen options={{headerShown: false}} name="Contact" component={Contact} />
       <Stack.Screen options={{headerShown: false}} name="Message" component={Message} />
+      <Stack.Screen options={{headerShown: false}} name="Task" component={Task} />
+      <Stack.Screen options={{headerShown: false}} name="Password" component={Password} />
     </Stack.Navigator>
   )
 }

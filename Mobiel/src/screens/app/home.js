@@ -160,14 +160,14 @@ export default function Home({ navigation }) {
                 </View>
 
                 <View style={styles.CardElements}>
-                  <TouchableHighlight style={styles.ContainerIcon}>
+                  <TouchableHighlight underlayColor='#3A51C9' style={styles.ContainerIcon}>
                     <Icon name="globe" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Change Lang</Text>
                 </View>
 
                 <View style={styles.CardElements}>
-                  <TouchableHighlight style={styles.ContainerIcon}>
+                  <TouchableHighlight underlayColor='#3A51C9' style={styles.ContainerIcon}>
                     <Icon name="upload" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Upload File</Text>
@@ -178,21 +178,21 @@ export default function Home({ navigation }) {
 
               <View style={styles.CardSection}>
                 <View style={styles.CardElements}>
-                  <TouchableHighlight style={styles.ContainerIconReverse}>
+                  <TouchableHighlight underlayColor='#3A51C9' style={styles.ContainerIconReverse} onPress={ () => navigation.navigate('Password')}>
                     <Icon name="shield" size={26} color="white" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Password Manager</Text>
                 </View>
 
                 <View style={styles.CardElements}>
-                  <TouchableHighlight style={styles.ContainerIconReverse}>
+                  <TouchableHighlight underlayColor='#3A51C9' style={styles.ContainerIconReverse}>
                     <Icon name="grid" size={26} color="white" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Album</Text>
                 </View>
 
                 <View style={styles.CardElements}>
-                  <TouchableHighlight style={styles.ContainerIconReverse}>
+                  <TouchableHighlight underlayColor='#3A51C9' style={styles.ContainerIconReverse}>
                     <Icon name="folder" size={26} color="white" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Folder</Text>
