@@ -27,7 +27,7 @@ export default function PasswordCard({site}) {
                 <Text style={styles.Text}>k.adesida@provi.data</Text>
                 <TextInput
                 style={styles.Password}
-                value="Testuellement"
+                value={service[site].name}
                 editable={false} 
                 secureTextEntry={hidePass ? true : false}
                 />
