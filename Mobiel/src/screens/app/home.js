@@ -119,7 +119,7 @@ export default function Home({ navigation }) {
       
         // Header component
         <View style={styles.container}>
-            <Header style={styles.header} name={user.email} />
+            <Header style={styles.header} name={user.email} navigation={navigation} />
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             <ScrollView style={styles.content}>
               

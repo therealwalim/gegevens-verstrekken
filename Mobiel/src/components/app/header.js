@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StyleSheet, Dimensions } from "react-native";
+import { Text, View, Image, StyleSheet, Dimensions} from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 var width = Dimensions.get('window').width;
 
@@ -29,7 +30,8 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function Header({name}){
+
+export default function Header({name, navigation}){
         return (
             <View style={styles.container}>
                 <View>
@@ -40,7 +42,9 @@ export default function Header({name}){
                     </View>
                 </View>
                 <View>
-                    <Image style={styles.avatar} source={require('../../assets/img/avatar.png')} />
+                    <TouchableWithoutFeedback onPress={ () => navigation.navigate('Profile')}>
+                        <Image style={styles.avatar} source={require('../../assets/img/avatar.png')} />
+                    </TouchableWithoutFeedback>
                 </View>
             </View>
         );

@@ -28,7 +28,7 @@ export default function Settings({ navigation }) {
 
     return (
       <View style={styles.container}>
-            <Header style={styles.header} name={user.email} />
+            <Header style={styles.header} name={user.email} navigation={navigation}/>
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             <ScrollView style={styles.content}>
               

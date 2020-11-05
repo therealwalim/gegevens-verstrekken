@@ -73,7 +73,7 @@ export default function Contact({ navigation }) {
       
         // Header component
         <View style={styles.container}>
-            <Header style={styles.header} name={user.email} />
+            <Header style={styles.header} name={user.email} navigation={navigation} />
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             
             <View style={styles.titleContainer}>
