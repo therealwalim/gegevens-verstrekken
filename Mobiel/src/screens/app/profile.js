@@ -60,11 +60,11 @@ export default function Profile({ navigation }) {
                     />
                     <TouchableHighlight
                         style={styles.button}
-                    ><Text style={{color:'white'}}>Submit</Text>
+                    ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
                         style={styles.buttonlogout}
-                    ><Text style={{color:'white'}}>Logout</Text>
+                    ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Logout</Text>
                     </TouchableHighlight>
                 </View>
             </ScrollView>
