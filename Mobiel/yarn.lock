@@ -6463,6 +6463,11 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
   "version" "17.0.1"
 
+"react-native-contacts@^6.0.3":
+  "integrity" "sha512-JoiYBrJ2/sAgzhytwaa7ephmqXkxO0o2vk4eNyOb74WjZNIEiBdZdjxjB62Lt4zMDT/28NwRk82d5m5x92m3Kg=="
+  "resolved" "https://registry.npmjs.org/react-native-contacts/-/react-native-contacts-6.0.3.tgz"
+  "version" "6.0.3"
+
 "react-native-dropdown-picker@^3.7.1":
   "integrity" "sha512-YyT4q+CgMw299ypSlvSOt/tZiYD0bsTmnNKazLwpYM3ouGaj34NTDS+MHVyiYpyZbn4XSs+FHRcs12PupWS7Cg=="
   "resolved" "https://registry.npmjs.org/react-native-dropdown-picker/-/react-native-dropdown-picker-3.7.1.tgz"

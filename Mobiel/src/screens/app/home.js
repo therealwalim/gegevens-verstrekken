@@ -146,7 +146,7 @@ export default function Home({ navigation }) {
 
               <View style={styles.CardSection}>
                 <View style={styles.CardElements}>
-                  <TouchableHighlight style={styles.ContainerIcon}>
+                  <TouchableHighlight underlayColor='#F1F1F1' style={styles.ContainerIcon} onPress={ () => navigation.navigate('AddNote')}>
                     <Icon name="list" size={32} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Create Note</Text>

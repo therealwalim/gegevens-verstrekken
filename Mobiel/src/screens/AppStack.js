@@ -7,6 +7,7 @@ import Message from "./app/messages";
 import Task from "./app/tasks";
 import Password from "./app/passwords";
 import Profile from "./app/profile";
+import AddNote from "./forms/addnote"
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ export const AppStack = () => {
       <Stack.Screen options={{headerShown: false}} name="Task" component={Task} />
       <Stack.Screen options={{headerShown: false}} name="Password" component={Password} />
       <Stack.Screen options={{headerShown: false}} name="Profile" component={Profile} />
+      <Stack.Screen options={{headerShown: false}} name="AddNote" component={AddNote} />
     </Stack.Navigator>
   )
 }
