@@ -87,7 +87,7 @@ input:{
 })
 
 
-export default function AddNote({ navigation }) {
+export default function AddPassword({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
   
@@ -113,7 +113,7 @@ export default function AddNote({ navigation }) {
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             
             <View style={styles.titleContainer}>
-                <Text style={styles.title1}>Create Note</Text>
+                <Text style={styles.title1}>Create Password</Text>
             </View>
 
             <ScrollView style={styles.content}>
@@ -121,19 +121,19 @@ export default function AddNote({ navigation }) {
                 <View style={styles.containerLog}>
                         <TextInput
                             style={styles.input}
-                            placeholder="Title"
+                            placeholder="Service"
                             autoCapitalize = 'none'
                         />
                         <TextInput
                             style={styles.input}
-                            placeholder="Description"
+                            placeholder="ID"
                             autoCapitalize = 'none'
                         />
                         <TextInput
-                            style={styles.inputarea}
-                            placeholder="Content"
-                            multiline={true}
-                            numberOfLines={4}
+                            style={styles.input}
+                            placeholder="Password"
+                            autoCapitalize = 'none'
+                            secureTextEntry={true}
                         />
                         <TouchableHighlight
                             style={styles.button}

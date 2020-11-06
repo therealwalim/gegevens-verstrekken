@@ -87,7 +87,7 @@ input:{
 })
 
 
-export default function AddNote({ navigation }) {
+export default function EditNote({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
   
@@ -137,7 +137,7 @@ export default function AddNote({ navigation }) {
                         />
                         <TouchableHighlight
                             style={styles.button}
-                        ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
+                        ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Save</Text>
                         </TouchableHighlight>
                     </View>
   

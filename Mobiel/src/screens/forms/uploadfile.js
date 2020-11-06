@@ -5,6 +5,8 @@ import axios from 'axios';
 import Header from '../../components/app/header'
 import BottomBar from '../../components/app/bottombar'
 import { TouchableHighlight } from "react-native-gesture-handler";
+import Icon from 'react-native-vector-icons/Feather';
+import { color } from "react-native-reanimated";
 
 axios.defaults.baseURL = 'http://10.0.2.2:8000';
 
@@ -74,20 +76,32 @@ input:{
     alignItems: 'center',
     justifyContent: 'center',
     color: "red"
-  },inputarea:{
+  },inputupload:{
+    width: width,
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 4,
+  },icon:{
+      padding: 18,
+      backgroundColor: '#4158D0',
+      borderTopLeftRadius: 5,
+      borderBottomLeftRadius: 5,
+  },inputfile:{
+    width: 301,
     padding: 18,
-    height:200,
-    textAlignVertical: 'top',
-    borderRadius: 5,
     backgroundColor: '#f8f8f8',
     elevation: 1,
     marginTop: 5,
     marginBottom: 5,
-  }
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
+    backgroundColor: '#4F69F3',
+    color: 'white'
+  },
 })
 
 
-export default function AddNote({ navigation }) {
+export default function UploadFile({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
   
@@ -113,27 +127,25 @@ export default function AddNote({ navigation }) {
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             
             <View style={styles.titleContainer}>
-                <Text style={styles.title1}>Create Note</Text>
+                <Text style={styles.title1}>Create Password</Text>
             </View>
 
             <ScrollView style={styles.content}>
               
                 <View style={styles.containerLog}>
+                        <View style={styles.inputupload}>
+                            <Icon style={styles.icon} name="upload" size={26} color="white" />
+                            <TextInput
+                                value="Upload File"
+                                editable={false}
+                                autoCapitalize = 'none'
+                                style={styles.inputfile}
+                            />
+                        </View>
                         <TextInput
                             style={styles.input}
-                            placeholder="Title"
+                            placeholder="Folder Name"
                             autoCapitalize = 'none'
-                        />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Description"
-                            autoCapitalize = 'none'
-                        />
-                        <TextInput
-                            style={styles.inputarea}
-                            placeholder="Content"
-                            multiline={true}
-                            numberOfLines={4}
                         />
                         <TouchableHighlight
                             style={styles.button}

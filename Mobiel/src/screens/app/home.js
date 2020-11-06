@@ -153,21 +153,21 @@ export default function Home({ navigation }) {
                 </View>
 
                 <View style={styles.CardElements}>
-                  <TouchableHighlight style={styles.ContainerIcon}>
+                  <TouchableHighlight underlayColor='#F1F1F1' style={styles.ContainerIcon} onPress={ () => navigation.navigate('AddPassword')}>
                     <Icon name="key" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Add Password</Text>
                 </View>
 
                 <View style={styles.CardElements}>
-                  <TouchableHighlight underlayColor='#3A51C9' style={styles.ContainerIcon}>
+                  <TouchableHighlight underlayColor='#F1F1F1' style={styles.ContainerIcon} onPress={ () => navigation.navigate('Settings')}>
                     <Icon name="globe" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Change Lang</Text>
                 </View>
 
                 <View style={styles.CardElements}>
-                  <TouchableHighlight underlayColor='#3A51C9' style={styles.ContainerIcon}>
+                  <TouchableHighlight underlayColor='#F1F1F1' style={styles.ContainerIcon} onPress={ () => navigation.navigate('UploadFile')}>
                     <Icon name="upload" size={26} color="#4158D0" />
                   </TouchableHighlight>
                   <Text style={styles.TextCard}>Upload File</Text>
