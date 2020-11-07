@@ -19,7 +19,6 @@ export default function Profile({ navigation }) {
       axios.get('/api/user')
         .then(response => {
           setName(response.data.name);
-          console.log(name);
         })
         .catch(error => {
           console.log(error.response);
@@ -31,7 +30,7 @@ export default function Profile({ navigation }) {
         
       <View style={styles.container}>
           <StatusBar translucent backgroundColor="transparent" barStyle={'light-content'} />
-            <HeaderProfile style={styles.header} name={user.email}/>
+            <HeaderProfile style={styles.header} name={user.name}/>
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             <ScrollView style={styles.content}>
                 <View style={styles.containerLog}>
@@ -64,6 +63,7 @@ export default function Profile({ navigation }) {
                     </TouchableHighlight>
                     <TouchableHighlight
                         style={styles.buttonlogout}
+                        onPress={() => logout()}
                     ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Logout</Text>
                     </TouchableHighlight>
                 </View>

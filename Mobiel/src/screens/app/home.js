@@ -107,7 +107,6 @@ export default function Home({ navigation }) {
       axios.get('/api/user')
         .then(response => {
           setName(response.data.name);
-          console.log(name);
         })
         .catch(error => {
           console.log(error.response);
@@ -119,7 +118,7 @@ export default function Home({ navigation }) {
       
         // Header component
         <View style={styles.container}>
-            <Header style={styles.header} name={user.email} navigation={navigation} />
+            <Header style={styles.header} name={user.name} navigation={navigation} />
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             <ScrollView style={styles.content}>
               

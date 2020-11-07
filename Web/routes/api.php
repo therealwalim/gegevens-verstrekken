@@ -23,14 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:sanctum')->get('/logout', function (Request $request) {
+Route::middleware('auth:sanctum')->post('/logout', function (Request $request) {
+    $request->user()->tokens()->delete();
 
-    $request->user()->currentAccessToken()->delete();
-
-    return response()->json([
-        "code" => 200,
-        "message" => "User logged out successfully"
-    ]);
+    return response('Loggedout', 200);
 });
 
 Route::post('/sanctum/token', function (Request $request) {

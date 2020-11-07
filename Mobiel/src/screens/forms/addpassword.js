@@ -109,7 +109,7 @@ export default function AddPassword({ navigation }) {
       
         // Header component
         <View style={styles.container}>
-            <Header style={styles.header} name={user.email} navigation={navigation}/>
+            <Header style={styles.header} name={user.name} navigation={navigation}/>
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             
             <View style={styles.titleContainer}>

@@ -27,12 +27,12 @@ export const AuthProvider = ({children}) => {
             const userResponse = {
               email: response.data.user.email,
               token: response.data.token,
-              name: response.data.name,
+              name: response.data.user.name,
             }
             setUser(userResponse);
             setError(null);
             AsyncStorage.setItem('user', JSON.stringify(userResponse));
-            console.log("User connected")
+            console.log(response.data.user.name+" connected")
           })
           .catch(error => {
             const key = Object.keys(error.response.data.errors)[0];

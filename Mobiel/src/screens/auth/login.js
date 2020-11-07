@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },title:{
     fontSize:20,
     fontFamily:'Montserrat',
-    fontWeight: '600',
+    fontWeight: 'bold',
     marginBottom:10,
     color:'#4158D0',
   },input:{
