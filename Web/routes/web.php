@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('auth')->group(function () {
+    // Dashboard
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
-Route::get('/dashboard', function(){
-    return view('pages.home');
-})->middleware('auth');
+    // Admin
+    Route::get('/users', [AdminController::class, 'index']);
+    // Contacts
+    // Messages
+    // Tasks
+    // Passwords
+    // Folders
 
+});

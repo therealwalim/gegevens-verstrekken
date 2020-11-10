@@ -1,5 +1,13 @@
 @extends('main')
 
+@section('variables')
+    @php
+        $company="Providata";
+        $title="Dashboard";
+        $page="Home";
+    @endphp
+@stop
+
 @section('content')
 <section id="description" class="card">
     <div class="card-header">
@@ -13,4 +21,9 @@
         </div>
     </div>
 </section>
+
+    <script>
+        var element = document.getElementById("Dashboard");
+        element.classList.add("active");
+    </script>
 @endsection

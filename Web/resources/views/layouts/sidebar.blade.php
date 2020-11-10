@@ -11,23 +11,39 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-        <li class=" nav-item"><a href="{{ asset('html/ltr/vertical-collapsed-menu-template/index.html') }}"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span><span class="badge badge badge-warning badge-pill float-right">2</span></a>
-            </li>
-            <li class=" nav-item"><a href="#"><i class="feather icon-zap"></i><span class="menu-title" data-i18n="Starter kit">Starter kit</span></a>
+            <!-- Dashboard -->
+        <li class="nav-item" id="Dashboard"><a href="/"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a></li>
+            <!-- Admin -->
+            <li class=" nav-item" ><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Starter kit">Administration</span></a>
                 <ul class="menu-content">
-                    <li><a href="sk-layout-2-columns.html"><i></i><span class="menu-item" data-i18n="2 columns">2 columns</span></a>
-                    </li>
-                    <li><a href="sk-layout-fixed-navbar.html"><i></i><span class="menu-item" data-i18n="Fixed navbar">Fixed navbar</span></a>
-                    </li>
-                    <li class="active"><a href="sk-layout-floating-navbar.html"><i></i><span class="menu-item" data-i18n="Floating navbar">Floating navbar</span></a>
-                    </li>
-                    <li><a href="sk-layout-fixed.html"><i></i><span class="menu-item" data-i18n="Fixed layout">Fixed layout</span></a>
+                    <li id="Admin"><a href="/users"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Users</span></a>
                     </li>
                 </ul>
             </li>
-            <li class=" nav-item"><a href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation"><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Documentation">Documentation</span></a>
+            <!-- Contacts -->
+            <li class=" nav-item" id="Contacts"><a href="/"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Dashboard">Contacts</span></a></li>
+            <!-- Messages -->
+            <li class=" nav-item" id="Messages"><a href="/"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Dashboard">Messages</span></a></li>
+            <!-- Tasks -->
+            <li id="Tasks" class=" nav-item"><a href="#"><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Starter kit">Tasks</span></a>
+                <ul class="menu-content">
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Create tasks</span></a>
+                    </li>
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Show tasks</span></a>
+                    </li>
+                </ul>
             </li>
-            <li class=" nav-item"><a href="https://pixinvent.ticksy.com/"><i class="feather icon-life-buoy"></i><span class="menu-title" data-i18n="Raise Support">Raise Support</span></a>
+            <!-- Passwords -->
+            <li class=" nav-item" id="Passwords"><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Starter kit">Passwords</span></a>
+                <ul class="menu-content">
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Add Passwords</span></a>
+                    </li>
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Show Passwords</span></a>
+                    </li>
+                </ul>
+            </li>
+            <!-- Folders -->
+            <li class=" nav-item" id="Folders"><a href="/"><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Dashboard">Folders</span></a></li>
             </li>
         </ul>
     </div>

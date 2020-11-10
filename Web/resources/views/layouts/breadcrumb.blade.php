@@ -1,13 +1,13 @@
 <div class="row breadcrumbs-top">
     <div class="col-12">
-        <h2 class="content-header-title float-left mb-0">Floating Navbar</h2>
+        <h2 class="content-header-title float-left mb-0">{{$title}}</h2>
         <div class="breadcrumb-wrapper col-12">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="sk-layout-2-columns.html">Home</a>
+                <li class="breadcrumb-item"><a href="sk-layout-2-columns.html">{{$company}}</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#">Starter Kit</a>
+                <li class="breadcrumb-item"><a href="#">{{$title}}</a>
                 </li>
-                <li class="breadcrumb-item active">Floating Navbar
+                <li class="breadcrumb-item active">{{$page}}
                 </li>
             </ol>
         </div>
