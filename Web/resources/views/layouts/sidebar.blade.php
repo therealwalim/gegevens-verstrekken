@@ -14,36 +14,36 @@
             <!-- Dashboard -->
         <li class="nav-item" id="Dashboard"><a href="/"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a></li>
             <!-- Admin -->
-            <li class=" nav-item" ><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Starter kit">Administration</span></a>
+            <li class=" nav-item" ><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Administration">Management</span></a>
                 <ul class="menu-content">
-                    <li id="Admin"><a href="/users"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Users</span></a>
+                    <li id="Admin"><a href="/users"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Users">Users</span></a>
                     </li>
                 </ul>
             </li>
             <!-- Contacts -->
-            <li class=" nav-item" id="Contacts"><a href="/"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Dashboard">Contacts</span></a></li>
+            <li class=" nav-item" id="Contacts"><a href="/"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Contacts">Contacts</span></a></li>
             <!-- Messages -->
-            <li class=" nav-item" id="Messages"><a href="/"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Dashboard">Messages</span></a></li>
+            <li class=" nav-item" id="Messages"><a href="/"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Messages">Messages</span></a></li>
             <!-- Tasks -->
-            <li id="Tasks" class=" nav-item"><a href="#"><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Starter kit">Tasks</span></a>
+            <li id="Tasks" class=" nav-item"><a href="#"><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Tasks">Tasks</span></a>
                 <ul class="menu-content">
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Create tasks</span></a>
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreateTask">Create tasks</span></a>
                     </li>
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Show tasks</span></a>
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowTask">Show tasks</span></a>
                     </li>
                 </ul>
             </li>
             <!-- Passwords -->
-            <li class=" nav-item" id="Passwords"><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Starter kit">Passwords</span></a>
+            <li class=" nav-item" id="Passwords"><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Passwords">Passwords</span></a>
                 <ul class="menu-content">
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Add Passwords</span></a>
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowPasswords">Add Passwords</span></a>
                     </li>
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="2 columns">Show Passwords</span></a>
+                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreatePasswords">Show Passwords</span></a>
                     </li>
                 </ul>
             </li>
             <!-- Folders -->
-            <li class=" nav-item" id="Folders"><a href="/"><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Dashboard">Folders</span></a></li>
+            <li class=" nav-item" id="Folders"><a href="/"><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Folders">Folders</span></a></li>
             </li>
         </ul>
     </div>
