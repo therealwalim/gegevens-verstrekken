@@ -21,15 +21,15 @@
                 </ul>
             </li>
             <!-- Contacts -->
-            <li class=" nav-item" id="Contacts"><a href="/"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Contacts">Contacts</span></a></li>
+            <li class=" nav-item" id="Contacts"><a href="/contacts"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Contacts">Contacts</span></a></li>
             <!-- Messages -->
-            <li class=" nav-item" id="Messages"><a href="/"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Messages">Messages</span></a></li>
+            <li class=" nav-item" id="Messages"><a href="/messages"><i class="feather icon-mail"></i><span class="menu-title" data-i18n="Messages">Messages</span></a></li>
             <!-- Tasks -->
-            <li id="Tasks" class=" nav-item"><a href="#"><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Tasks">Tasks</span></a>
+            <li id="Tasks" class=" nav-item"><a href=""><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Tasks">Tasks</span></a>
                 <ul class="menu-content">
                     <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreateTask">Create tasks</span></a>
                     </li>
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowTask">Show tasks</span></a>
+                    <li><a href="/tasks"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowTask">Show tasks</span></a>
                     </li>
                 </ul>
             </li>
@@ -38,12 +38,12 @@
                 <ul class="menu-content">
                     <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowPasswords">Add Passwords</span></a>
                     </li>
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreatePasswords">Show Passwords</span></a>
+                    <li><a href="/passwords"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreatePasswords">Show Passwords</span></a>
                     </li>
                 </ul>
             </li>
             <!-- Folders -->
-            <li class=" nav-item" id="Folders"><a href="/"><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Folders">Folders</span></a></li>
+            <li class=" nav-item" id="Folders"><a href="/folders"><i class="feather icon-folder"></i><span class="menu-title" data-i18n="Folders">Folders</span></a></li>
             </li>
         </ul>
     </div>
