@@ -9,18 +9,23 @@
 @stop
 
 @section('content')
-    <section id="description" class="card">
-        <div class="card-header">
-            <h4 class="card-title">Description</h4>
-        </div>
-        <div class="card-content">
-            <div class="card-body">
-                <div class="card-text">
-                    <p>The floating navigation layout has a fixed navigation and floating navbar menu and footer. Only navigation section and navbar menu is fixed to user. Navbar Wrapper has specing from all sides. In this page you can experience it.</p>
+    <div class="row">
+        <div class="col-lg-3 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-header d-flex align-items-start pb-0">
+                    <div>
+                        <h4 class="text-bold-700 mb-0">agnes@email.fr</h4>
+                        <p>0770293837</p>
+                    </div>
+                    <div class="avatar bg-rgba-success p-50 m-0">
+                        <div class="avatar-content">
+                            <i class="fa fa-spotify text-success font-medium-5"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <script>
         var element = document.getElementById("Passwords");
