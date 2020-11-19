@@ -11,6 +11,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -44,8 +45,12 @@ class FortifyServiceProvider extends ServiceProvider
             $user = User::where('email', $request->email)->first();
 
             if ($user &&
-                Hash::check($request->password, $user->password)) {
+                Hash::check($request->password, $user->password) && $user->is_verified === 1 ) {
                 return $user;
+            }else{
+                throw ValidationException::withMessages([
+                    'unverified' => ['Please verify your account'],
+                ]);
             }
         });
 

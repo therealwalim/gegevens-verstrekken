@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
     // Admin
-    Route::get('/users', [AdminController::class, 'index']);
+    Route::get('/users', ['middleware' => ['role:administrator'], 'uses' => 'App\Http\Controllers\AdminController@index']);
     // Contacts
     Route::get('/contacts', [WebContactController::class, 'index']);
     // Messages
@@ -38,5 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/passwords', [WebPasswordController::class, 'index']);
     // Folders
     Route::get('/folders', [WebFolderController::class, 'index']);
+    // Profile
+    Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'index'])->name('pages.profile');
+    Route::post('/updatepicture', [\App\Http\Controllers\ProfileController::class,'edit_photo'])->name('profile.photo');
+    Route::put('/editpassword', [\App\Http\Controllers\ProfileController::class,'edit_password'])->name('edit.password');
+    Route::put('/editprofile', [\App\Http\Controllers\ProfileController::class,'edit_profile'])->name('edit.profile');
 
 });

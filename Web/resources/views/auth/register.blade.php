@@ -30,19 +30,34 @@
                                                         @csrf
                                                         <div class="form-label-group">
                                                             <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
-                                                            <label for="inputName">Name</label>
+                                                            <label for="name">Name</label>
+                                                            @error('name')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{$message}}</strong>
+                                                                </span>
+                                                            @enderror
                                                         </div>
                                                         <div class="form-label-group">
                                                             <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
-                                                            <label for="inputEmail">Email</label>
+                                                            <label for="email">Email</label>
+                                                            @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{$message}}</strong>
+                                                                </span>
+                                                            @enderror
                                                         </div>
                                                         <div class="form-label-group">
                                                             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                                                            <label for="inputPassword">Password</label>
+                                                            <label for="password">Password</label>
+                                                            @error('password')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{$message}}</strong>
+                                                                </span>
+                                                            @enderror
                                                         </div>
                                                         <div class="form-label-group">
-                                                            <input type="password" id="inputConfPassword" class="form-control" placeholder="Confirm Password" required>
-                                                            <label for="inputConfPassword">Confirm Password</label>
+                                                            <input type="password" id="password_confirmation" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
+                                                            <label for="password_confirmation">Confirm Password</label>
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-12">
@@ -60,7 +75,7 @@
                                                             </div>
                                                         </div>
                                                         <a href="/login" class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
-                                                        <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</a>
+                                                        <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</button>
                                                     </form>
                                                 </div>
                                             </div>

@@ -11,7 +11,3 @@
     <script src="{{asset('app-assets/js/core/app.js')}}"></script>
     <script src="{{asset('app-assets/js/scripts/components.js')}}"></script>
     <!-- END: Theme JS-->
-
-    <script src="{{asset('app-assets/js/scripts/pages/app-file-manager.js')}}"></script>
-    <script src="{{asset('app-assets/vendors/js/tables/datatable/datatables.min.js')}}"></script>
-    <script src="{{asset('app-assets/vendors/js/tables/datatable/dataTables.select.min.js')}}"></script>

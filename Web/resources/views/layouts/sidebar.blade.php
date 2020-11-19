@@ -14,12 +14,14 @@
             <!-- Dashboard -->
         <li class="nav-item" id="Dashboard"><a href="/"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a></li>
             <!-- Admin -->
+            @role('administrator')
             <li class=" nav-item" ><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Administration">Management</span></a>
                 <ul class="menu-content">
                     <li id="Admin"><a href="/users"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="Users">Users</span></a>
                     </li>
                 </ul>
             </li>
+            @endrole
             <!-- Contacts -->
             <li class=" nav-item" id="Contacts"><a href="/contacts"><i class="feather icon-user"></i><span class="menu-title" data-i18n="Contacts">Contacts</span></a></li>
             <!-- Messages -->

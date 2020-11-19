@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Http\Controllers\MailController;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -16,7 +17,7 @@ class CreateNewUser implements CreatesNewUsers
      * Validate and create a newly registered user.
      *
      * @param  array  $input
-     * @return \App\Models\User
+     * @return User
      */
     public function create(array $input)
     {
@@ -32,10 +33,24 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
+        $user = new User();
+        $user->name = $input['name'];
+        $user->password = Hash::make($input['password']);
+        $user->email = $input['email'];
+        $user->verification_code = sha1(time());
+        $user->save();
+
+        //Send Email
+        MailController::sendSignupEmail($input['name'], $input['email'], $user->password, $user->verification_code);
+
+        //Show Message
+        /*$user = User::all();
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
-            'password' => Hash::make($input['password']),
-        ]);
-    }
-}
+            'password' => $password,
+            'verification_code' => sha1(time()),
+        ]);*/
+
+        return $user;
+}}

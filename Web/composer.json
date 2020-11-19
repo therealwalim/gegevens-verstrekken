@@ -13,11 +13,13 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.5",
         "laravel/fortify": "^1.6",
         "laravel/framework": "^8.0",
         "laravel/sanctum": "^2.7",
         "laravel/socialite": "^5.1",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "santigarcor/laratrust": "^6.3"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
