@@ -10,21 +10,50 @@
 
 @section('content')
     <div class="row">
-        <div class="col-lg-3 col-sm-6 col-12">
-            <div class="card">
-                <div class="card-header d-flex align-items-start pb-0">
-                    <div>
-                        <h4 class="text-bold-700 mb-0">agnes@email.fr</h4>
-                        <p>0770293837</p>
-                    </div>
-                    <div class="avatar bg-rgba-success p-50 m-0">
-                        <div class="avatar-content">
-                            <i class="fa fa-spotify text-success font-medium-5"></i>
+        @foreach($password as $passwords)
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-header d-flex align-items-start pb-0">
+                        <div>
+                            <h5 class="text-bold-700 mb-0">{{$passwords->serviceid}}</h5>
+                            <p>{{$passwords->password}}</p>
                         </div>
+                        @if($passwords->service === "twitter")
+                            <div class="avatar bg-rgba-info p-35 m-0" title="" data-placement="left" data-toggle="tooltip" data-original-title="{{$passwords->service}}">
+                                <div class="avatar-content">
+                                    <i class="fa fa-{{$passwords->service}} text-info font-medium-3"></i>
+                                </div>
+                            </div>
+                        @elseif($passwords->service === "spotify")
+                            <div class="avatar bg-rgba-success p-35 m-0" title="" data-placement="left" data-toggle="tooltip" data-original-title="{{$passwords->service}}">
+                                <div class="avatar-content">
+                                    <i class="fa fa-{{$passwords->service}} text-success font-medium-3"></i>
+                                </div>
+                            </div>
+                        @elseif($passwords->service === "facebook")
+                            <div class="avatar bg-rgba-primary p-35 m-0" title="" data-placement="left" data-toggle="tooltip" data-original-title="{{$passwords->service}}">
+                                <div class="avatar-content">
+                                    <i class="fa fa-{{$passwords->service}} text-primary font-medium-3"></i>
+                                </div>
+                            </div>
+                        @elseif($passwords->service === "snapchat")
+                            <div class="avatar bg-rgba-warning p-35 m-0" title="" data-placement="left" data-toggle="tooltip" data-original-title="{{$passwords->service}}">
+                                <div class="avatar-content">
+                                    <i class="fa fa-{{$passwords->service}} text-warning font-medium-3"></i>
+                                </div>
+                            </div>
+                        @else
+                            <div class="avatar bg-rgba-danger p-35 m-0" title="" data-placement="left" data-toggle="tooltip" data-original-title="{{$passwords->service}}">
+                                <div class="avatar-content">
+                                    <i class="feather icon-globe text-danger font-medium-5"></i>
+                                </div>
+                            </div>
+                        @endif
+
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 
     <script>

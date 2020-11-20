@@ -31,7 +31,7 @@ class Password extends Model
      * @var array
      */
     protected $fillable = [
-        'website', 'password', 'users_id'
+        'service', 'serviceid', 'password', 'user_id'
     ];
 
     /**

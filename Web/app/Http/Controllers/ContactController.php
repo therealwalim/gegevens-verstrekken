@@ -23,7 +23,7 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return JsonResponse
      */
     public function store(Request $request)
@@ -32,7 +32,7 @@ class ContactController extends Controller
         $contact->name = $request->name;
         $contact->phone = $request->phone;
         $contact->email = $request->email;
-        $contact->user_id = $request->user_id;
+        $contact->users_id = $request->user_id;
         $contact->save();
 
         return response()->json([
@@ -56,7 +56,7 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

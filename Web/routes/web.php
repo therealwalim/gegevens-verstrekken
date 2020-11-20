@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/messages', [WebMessageController::class, 'index']);
     // Tasks
     Route::get('/tasks', [WebNoteController::class, 'index']);
+    Route::post('/destroy', [WebNoteController::class, 'destroy'])->name('note.destroy');
     // Passwords
     Route::get('/passwords', [WebPasswordController::class, 'index']);
     // Folders

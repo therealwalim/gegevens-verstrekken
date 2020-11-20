@@ -22,7 +22,8 @@ class CreatePasswordsTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
-            $table->string('website', 100)->nullable();
+            $table->string('service', 100)->nullable();
+            $table->string('serviceid', 45)->nullable();
             $table->string('password', 45)->nullable();
             $table->integer('user_id')->unsigned();
 

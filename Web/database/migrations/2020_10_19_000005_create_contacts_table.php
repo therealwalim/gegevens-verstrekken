@@ -26,9 +26,9 @@ class CreateContactsTable extends Migration
             $table->string('phone', 45);
             $table->string('attribut', 45)->nullable();
             $table->string('email', 45)->nullable();
-            $table->integer('user_id')->unsigned();
+            $table->integer('users_id')->unsigned();
 
-            $table->foreign('user_id')
+            $table->foreign('users_id')
                 ->references('id')->on('users');
         });
     }
