@@ -31,7 +31,7 @@ class File extends Model
      * @var array
      */
     protected $fillable = [
-        'path', 'type', 'folders_id'
+        'path', 'type', 'folder_id'
     ];
 
     /**
@@ -49,7 +49,7 @@ class File extends Model
      * @var array
      */
     protected $casts = [
-        'path' => 'string', 'type' => 'string', 'folders_id' => 'int'
+        'path' => 'string', 'type' => 'string', 'folder_id' => 'int'
     ];
 
     /**
@@ -73,8 +73,8 @@ class File extends Model
     // Functions ...
 
     // Relations ...
-    public function user()
+    public function folder()
     {
-        return $this->belongsToMany('App\Models\User','users_id','id');
+        return $this->belongsToMany('App\Models\Folder','folders','id');
     }
 }

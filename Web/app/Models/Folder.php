@@ -73,8 +73,17 @@ class Folder extends Model
     // Functions ...
 
     // Relations ...
+    /**
+     * @var mixed
+     */
+
     public function user()
     {
-        return $this->belongsToMany('App\Models\User','users_id','id');
+        return $this->belongsToMany('App\Models\User','users','id');
+    }
+
+    public function file()
+    {
+        return $this->hasMany('App\Models\File','folder_id');
     }
 }

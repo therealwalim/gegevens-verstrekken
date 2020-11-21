@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Folder;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Models\File as FileModel;
 
@@ -31,18 +33,20 @@ class FileController extends Controller
     {
         //dd($request);
         $folderName = $request->folderName;
-        $path = public_path().'/folders/' . $folderName;
+        $path = public_path().'/cloud/' . $folderName;
 
         // Check if the folder exist
         if(File::exists($path)) {
 
             $fileName = time().'.'.$request->fileName->getClientOriginalExtension();
-            $request->fileName->move(public_path('/folders/'.$request->folderName.'/'), $fileName);
+            $request->fileName->move(public_path('/cloud/'.$request->folderName.'/'), $fileName);
+
+            $id = Folder::where('name', $request->folderName)->first()->id;
 
             $file = new \App\Models\File();;
-            $file->path = $request->fileName;
+            $file->path = $fileName;
             $file->type = "image";
-            $file->folder_id = 10;
+            $file->folder_id = $id;
             $file->save();
 
             return response()->json([
@@ -52,18 +56,20 @@ class FileController extends Controller
         }else{
             $folder = new Folder();
             $folder->name = $request->folderName;
-            $folder->user_id = 1;
+            $folder->user_id = Auth::id();
             $folder->save();
 
             File::makeDirectory($path, $mode = 0777, true, true);
 
             $fileName = time().'.'.$request->fileName->getClientOriginalExtension();
-            $request->fileName->move(public_path('/folders/'.$request->folderName.'/'), $fileName);
+            $request->fileName->move(public_path('/cloud/'.$request->folderName.'/'), $fileName);
+
+            $id = Folder::where('name', $request->folderName)->first()->id;
 
             $file = new \App\Models\File();
-            $file->path = $request->fileName;
+            $file->path = $fileName;
             $file->type = "image";
-            $file->folder_id = 10;
+            $file->folder_id = $id;
             $file->save();
 
             return response()->json([
