@@ -84,6 +84,6 @@ class Folder extends Model
 
     public function file()
     {
-        return $this->hasMany('App\Models\File','folder_id');
+        return $this->hasMany('App\Models\File','folder_id','id');
     }
 }

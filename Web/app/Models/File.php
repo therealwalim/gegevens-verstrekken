@@ -75,6 +75,6 @@ class File extends Model
     // Relations ...
     public function folder()
     {
-        return $this->belongsToMany('App\Models\Folder','folders','id');
+        return $this->belongsToMany('App\Models\Folder');
     }
 }

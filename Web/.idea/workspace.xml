@@ -29,11 +29,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Conception/Providata.xd" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/Providata.xd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Conception/database_modelisation.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/database_modelisation.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Conception/database_modelisation.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/database_modelisation.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Conception/database_schema.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Conception/database_schema.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/cloud/Alpha/1606042937.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/cloud/Beta/1606039364.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/cloud/Tortank/1606047775.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebFolderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebFolderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Folder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Folder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/folders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/folders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +194,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -214,7 +224,8 @@
       <workItem from="1603535403775" duration="4320000" />
       <workItem from="1603564291624" duration="7329000" />
       <workItem from="1605957690262" duration="277000" />
-      <workItem from="1605958375613" duration="12663000" />
+      <workItem from="1605958375613" duration="13082000" />
+      <workItem from="1606035504159" duration="16772000" />
     </task>
     <servers />
   </component>
@@ -265,6 +276,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1605957739227" />
+    <state x="184" y="14" key="SettingsEditor" timestamp="1606035529649">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="14" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1606035529649" />
     <state x="275" y="98" key="Vcs.Push.Dialog.v2" timestamp="1606002097891">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

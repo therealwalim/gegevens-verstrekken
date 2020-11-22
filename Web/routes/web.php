@@ -39,6 +39,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/passwords', [WebPasswordController::class, 'index']);
     // Folders
     Route::get('/folders', [WebFolderController::class, 'index']);
+    Route::get('/download', [WebFolderController::class, 'getDownload'])->name('file.download');
+    Route::get('/files', [WebFolderController::class, 'getFiles'])->name('get.files');
+
     // Profile
     Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'index'])->name('pages.profile');
     Route::post('/updatepicture', [\App\Http\Controllers\ProfileController::class,'edit_photo'])->name('profile.photo');
