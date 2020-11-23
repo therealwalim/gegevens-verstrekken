@@ -21,7 +21,7 @@
                             <h4 class="card-title">
                                 {{$note->title}}
                             </h4>
-                            <button type="button" value="{{$note->id}}" id="deletenote" class="btn btn-sm btn-icon btn-danger waves-effect waves-light"><i class="feather icon-trash-2"></i></button>
+                            <button type="button" value="{{$note->id}}" id="deletenote" class="deletenote{{$note->id}} btn btn-sm btn-icon btn-danger waves-effect waves-light"><i class="feather icon-trash-2"></i></button>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -55,7 +55,7 @@
                 success: function (data) {
                     if(data == "deleted")
                     {
-                        $(".delete").hide();
+                        $(".delete" + id).hide();
                         const Toast = Swal.mixin({
                             toast: true,
                             position: 'bottom-end',

@@ -29,19 +29,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/cloud/Alpha/1606042937.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/cloud/Beta/1606039364.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/cloud/Tortank/1606047775.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/addnote.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobiel/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobiel/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebFolderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebFolderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Folder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Folder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/folders.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/folders.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebNoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebNoteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/tasks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/tasks.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +221,8 @@
       <workItem from="1603564291624" duration="7329000" />
       <workItem from="1605957690262" duration="277000" />
       <workItem from="1605958375613" duration="13082000" />
-      <workItem from="1606035504159" duration="16772000" />
+      <workItem from="1606035504159" duration="17759000" />
+      <workItem from="1606133598572" duration="6877000" />
     </task>
     <servers />
   </component>

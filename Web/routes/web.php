@@ -34,7 +34,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/messages', [WebMessageController::class, 'index']);
     // Tasks
     Route::get('/tasks', [WebNoteController::class, 'index']);
+    Route::get('/noteform', [WebNoteController::class, 'indexnote']);
     Route::post('/destroy', [WebNoteController::class, 'destroy'])->name('note.destroy');
+    Route::post('/addnote', [WebNoteController::class, 'store'])->name('note.create');
     // Passwords
     Route::get('/passwords', [WebPasswordController::class, 'index']);
     // Folders

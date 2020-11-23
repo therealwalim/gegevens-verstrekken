@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Mockery\Matcher\Not;
 
 class WebNoteController extends Controller
 {
@@ -22,5 +24,19 @@ class WebNoteController extends Controller
             $note->delete();
         }
         return response()->json("deleted");
+    }
+
+    public function indexnote(){
+        return view('pages.addnote');
+    }
+
+    public function store(Request $request){
+        $note = new Note();
+        $note->title = $request->title;
+        $note->content = $request->contenu;
+        $note->user_id = Auth::id();
+        $note->save();
+
+        return response()->json('created');
     }
 }
