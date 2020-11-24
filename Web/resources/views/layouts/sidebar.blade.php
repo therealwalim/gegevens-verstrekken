@@ -29,7 +29,7 @@
             <!-- Tasks -->
             <li id="Tasks" class=" nav-item"><a href=""><i class="feather icon-clipboard"></i><span class="menu-title" data-i18n="Tasks">Tasks</span></a>
                 <ul class="menu-content">
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreateTask">Create tasks</span></a>
+                    <li><a href="/noteform"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreateTask">Create tasks</span></a>
                     </li>
                     <li><a href="/tasks"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowTask">Show tasks</span></a>
                     </li>
@@ -38,7 +38,7 @@
             <!-- Passwords -->
             <li class=" nav-item" id="Passwords"><a href="#"><i class="feather icon-shield"></i><span class="menu-title" data-i18n="Passwords">Passwords</span></a>
                 <ul class="menu-content">
-                    <li><a href="/"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowPasswords">Add Passwords</span></a>
+                    <li><a href="/passwordform"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="ShowPasswords">Add Passwords</span></a>
                     </li>
                     <li><a href="/passwords"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="CreatePasswords">Show Passwords</span></a>
                     </li>

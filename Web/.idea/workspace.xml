@@ -29,14 +29,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/addnote.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/addpassword.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobiel/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobiel/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebNoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebNoteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/addnote.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/addnote.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/tasks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/tasks.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -222,7 +224,8 @@
       <workItem from="1605957690262" duration="277000" />
       <workItem from="1605958375613" duration="13082000" />
       <workItem from="1606035504159" duration="17759000" />
-      <workItem from="1606133598572" duration="6877000" />
+      <workItem from="1606133598572" duration="7503000" />
+      <workItem from="1606209337989" duration="4875000" />
     </task>
     <servers />
   </component>
@@ -265,10 +268,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="385" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1603103281346" />
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603294536448">
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606213743134">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1603294536448" />
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1606213743134" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1605957739227">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

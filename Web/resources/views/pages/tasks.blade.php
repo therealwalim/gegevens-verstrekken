@@ -15,13 +15,13 @@
     <section id="draggable-cards">
         <div class="row" id="card-drag-area">
             @foreach($notes as $note)
-                <div class="col-xl-3 col-md-6 col-sm-12 delete">
+                <div class="col-xl-3 col-md-6 col-sm-12 deletenote{{$note->id}}">
                     <div class="card">
                         <div class="card-header align-items-center">
                             <h4 class="card-title">
                                 {{$note->title}}
                             </h4>
-                            <button type="button" value="{{$note->id}}" id="deletenote" class="deletenote{{$note->id}} btn btn-sm btn-icon btn-danger waves-effect waves-light"><i class="feather icon-trash-2"></i></button>
+                            <button type="button" value="{{$note->id}}" id="deletenote" class="deletenote btn btn-sm btn-icon btn-danger waves-effect waves-light"><i class="feather icon-trash-2"></i></button>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
@@ -46,16 +46,17 @@
         // Hide card test
 
         // Function to delete users
-        $("#deletenote").click(function(e){
+        $(".deletenote").click(function(e){
+            var id = $(this).val();
             $.ajax({
                 url: "{{route('note.destroy')}}",
                 method: "post",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                data: {id:$('#deletenote').val()},
+                data: {id:id},
                 success: function (data) {
                     if(data == "deleted")
                     {
-                        $(".delete" + id).hide();
+                        $(".deletenote" + id).hide();
                         const Toast = Swal.mixin({
                             toast: true,
                             position: 'bottom-end',

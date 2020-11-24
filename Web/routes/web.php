@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/addnote', [WebNoteController::class, 'store'])->name('note.create');
     // Passwords
     Route::get('/passwords', [WebPasswordController::class, 'index']);
+    Route::get('/passwordform', [WebPasswordController::class, 'indexpassword']);
+    Route::post('/addpassword', [WebPasswordController::class, 'store'])->name('pass.create');
     // Folders
     Route::get('/folders', [WebFolderController::class, 'index']);
     Route::get('/download', [WebFolderController::class, 'getDownload'])->name('file.download');

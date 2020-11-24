@@ -3,8 +3,8 @@
 @section('variables')
     @php
         $company="Providata";
-        $title="Tasks";
-        $page="Add Task";
+        $title="Passwords";
+        $page="Add Password";
     @endphp
 @stop
 
@@ -15,36 +15,42 @@
             <div class="col-md-6 col-12">
                 <div class="card" style="height: 310.283px;">
                     <div class="card-header">
-                        <h4 class="card-title">Add a note</h4>
+                        <h4 class="card-title">Add a password</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-label-group">
-                                                <input type="text" id="first-name-floating" class="form-control" placeholder="Title" name="title">
-                                                <label for="first-name-floating">Title</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <fieldset class="form-label-group">
-                                                <textarea class="form-control" id="email-floating" rows="3" placeholder="Content" name="contenu"></textarea>
-                                                <label for="email-floating">Content</label>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-12">
-                                            <button id="addnote" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-label-group">
+                                            <input type="text" id="first-name-floating" class="form-control" placeholder="Service" name="service">
+                                            <label for="first-name-floating">Service</label>
                                         </div>
                                     </div>
+                                    <div class="col-12">
+                                        <div class="form-label-group">
+                                            <input type="text" id="first-name-floating" class="form-control" placeholder="ID" name="serviceid">
+                                            <label for="first-name-floating">ID</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-label-group">
+                                            <input type="password" id="password-floating" class="form-control" name="password" placeholder="Password">
+                                            <label for="password-floating">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button id="addnote" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Submit</button>
+                                    </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-12">
             </div>
-            </div>
+        </div>
         </div>
     </section>
 
@@ -58,13 +64,14 @@
 
         // Function to create note
         $("#addnote").click(function(e){
-            var title = $("input[name=title]").val();
-            var content = $('#email-floating').val();
+            var service = $("input[name=service]").val();
+            var serviceid = $("input[name=serviceid]").val();
+            var password = $("input[name=password]").val();
             $.ajax({
-                url: "{{route('note.create')}}",
+                url: "{{route('pass.create')}}",
                 method: "post",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                data: {title:title,contenu:content},
+                data: {service:service,serviceid:serviceid,password:password},
                 success: function (data) {
                     if(data == "created")
                     {
@@ -82,7 +89,7 @@
 
                         Toast.fire({
                             icon: 'success',
-                            title: 'Note created with success'
+                            title: 'Password added with success'
                         })
                     }
                 }
