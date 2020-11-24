@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
 
     // Admin
     Route::get('/users', ['middleware' => ['role:administrator'], 'uses' => 'App\Http\Controllers\AdminController@index']);
+    Route::get('/userdata', [AdminController::class, 'userdata'])->name('user.data');
     // Contacts
     Route::get('/contacts', [WebContactController::class, 'index']);
     // Messages

@@ -45,7 +45,6 @@ $(document).ready(function () {
   // Renering Icons in Actions column
   var customIconsHTML = function (params) {
     var usersIcons = document.createElement("span");
-    var editIconHTML = "<a href='app-user-edit.html'><i class= 'users-edit-icon feather icon-edit-1 mr-50'></i></a>"
     var deleteIconHTML = document.createElement('i');
     var attr = document.createAttribute("class")
     attr.value = "users-delete-icon feather icon-trash-2"
@@ -60,14 +59,13 @@ $(document).ready(function () {
         remove: deleteArr
       });
     });
-    usersIcons.appendChild($.parseHTML(editIconHTML)[0]);
     usersIcons.appendChild(deleteIconHTML);
     return usersIcons
   }
 
   //  Rendering avatar in username column
   var customAvatarHTML = function (params) {
-    return "<span class='avatar'><img src='" + params.data.avatar + "' height='32' width='32'></span>" + params.value
+    return "<span class='avatar'><img src='upload/avatars/" + params.data.photo + "' height='32' width='32'></span>" + params.value
   }
 
   // ag-grid
@@ -83,68 +81,61 @@ $(document).ready(function () {
       headerCheckboxSelection: true,
     },
     {
-      headerName: 'Username',
-      field: 'username',
+      headerName: 'Name',
+      field: 'name',
       filter: true,
-      width: 175,
+      width: 200,
       cellRenderer: customAvatarHTML,
+        cellStyle: {
+            "text-align": "center"
+        },
     },
     {
       headerName: 'Email',
       field: 'email',
       filter: true,
       width: 225,
-    },
-    {
-      headerName: 'Name',
-      field: 'name',
-      filter: true,
-      width: 200,
-    },
-    {
-      headerName: 'Country',
-      field: 'country',
-      filter: true,
-      width: 150,
-    },
-    {
-      headerName: 'Role',
-      field: 'role',
-      filter: true,
-      width: 150,
-    },
-    {
-      headerName: 'Status',
-      field: 'status',
-      filter: true,
-      width: 150,
-      cellRenderer: customBadgeHTML,
-      cellStyle: {
-        "text-align": "center"
-      }
+        cellStyle: {
+            "text-align": "center"
+        },
     },
     {
       headerName: 'Verified',
       field: 'is_verified',
       filter: true,
-      width: 125,
+      width: 200,
       cellRenderer: customBulletHTML,
       cellStyle: {
         "text-align": "center"
+      },
+    },
+      {
+          headerName: 'Phone',
+          field: 'phone',
+          filter: true,
+          width: 225,
+          cellStyle: {
+              "text-align": "center"
+          },
+      },
+      {
+          headerName: 'Created At',
+          field: 'created_at',
+          filter: true,
+          width: 200,
+          cellStyle: {
+              "text-align": "center"
+          },
+      },
+      {
+          headerName: 'Actions',
+          field: 'transactions',
+          width: 200,
+          cellRenderer: customIconsHTML,
+          cellStyle: {
+              "text-align": "center"
+          },
       }
-    },
-    {
-      headerName: 'Department',
-      field: 'department',
-      filter: true,
-      width: 150,
-    },
-    {
-      headerName: 'Actions',
-      field: 'transactions',
-      width: 150,
-      cellRenderer: customIconsHTML,
-    }
   ];
 
   /*** GRID OPTIONS ***/
@@ -171,7 +162,7 @@ $(document).ready(function () {
     /*** GET TABLE DATA FROM URL ***/
     agGrid
       .simpleHttpRequest({
-        url: "app-assets/data/users-list.json"
+        url: "http://127.0.0.1:8000/userdata"
       })
       .then(function (data) {
         gridOptions.api.setRowData(data);
