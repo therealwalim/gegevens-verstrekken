@@ -51,6 +51,7 @@ $(document).ready(function () {
     deleteIconHTML.setAttributeNode(attr);
     // selected row delete functionality
     deleteIconHTML.addEventListener("click", function () {
+
       deleteArr = [
         params.data
       ];
@@ -86,18 +87,12 @@ $(document).ready(function () {
       filter: true,
       width: 200,
       cellRenderer: customAvatarHTML,
-        cellStyle: {
-            "text-align": "center"
-        },
     },
     {
       headerName: 'Email',
       field: 'email',
       filter: true,
       width: 225,
-        cellStyle: {
-            "text-align": "center"
-        },
     },
     {
       headerName: 'Verified',
@@ -105,9 +100,9 @@ $(document).ready(function () {
       filter: true,
       width: 200,
       cellRenderer: customBulletHTML,
-      cellStyle: {
-        "text-align": "center"
-      },
+        cellStyle: {
+            "text-align": "center"
+        },
     },
       {
           headerName: 'Phone',
