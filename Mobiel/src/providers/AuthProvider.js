@@ -28,6 +28,9 @@ export const AuthProvider = ({children}) => {
               email: response.data.user.email,
               token: response.data.token,
               name: response.data.user.name,
+              phone: response.data.user.phone,
+              password: response.data.user.password,
+              id: response.data.user.id,
             }
             setUser(userResponse);
             setError(null);
@@ -41,6 +44,19 @@ export const AuthProvider = ({children}) => {
         },register: (email,name,phone,password) => {
           axios.post('/api/users', {
             email,
+            name,
+            phone,
+            password,
+          })
+          .then(response => {
+            console.log(response.message)
+          })
+          .catch(error => {
+            console.log(error.response);
+          })
+        },
+        profile: (name,phone,password) => {
+          axios.put('/api/users/' + user.id, {
             name,
             phone,
             password,

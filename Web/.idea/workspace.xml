@@ -29,18 +29,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/upload/avatars/d0e255f6594ea1625d2ad08d8ee2bc5aa10163a3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gegevens-verstrekken.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobiel/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobiel/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app-assets/js/scripts/pages/app-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app-assets/js/scripts/pages/app-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mail/signup-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail/signup-email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,6 +219,7 @@
       <workItem from="1606133598572" duration="7503000" />
       <workItem from="1606209337989" duration="17043000" />
       <workItem from="1606292619980" duration="6516000" />
+      <workItem from="1606758244125" duration="2711000" />
     </task>
     <servers />
   </component>

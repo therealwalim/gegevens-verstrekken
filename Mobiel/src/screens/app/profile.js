@@ -9,14 +9,16 @@ import Icon from 'react-native-vector-icons/Feather';
 import { TouchableHighlight } from "react-native-gesture-handler";
 
 export default function Profile({ navigation }) {
-    const { user, logout } = useContext(AuthContext)
-    const [name, setName] = useState(null);
-    const [country, setCountry] = useState('uk');
+    const { user, logout, profile } = useContext(AuthContext)
+
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
   
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
   
-      axios.get('/api/user')
+      axios.get('/api/users')
         .then(response => {
           setName(response.data.name);
         })
@@ -35,30 +37,36 @@ export default function Profile({ navigation }) {
             <ScrollView style={styles.content}>
                 <View style={styles.containerLog}>
                     <TextInput
+                        
                         style={styles.input}
-                        placeholder="Email"
+                        editable={false} 
+                        placeholder={user.email ? user.email : "Email"}
                         textContentType="emailAddress"
                         autoCapitalize = 'none'
                     />
                     <TextInput
                         style={styles.input}
-                        placeholder="Full Name"
+                        placeholder={user.name ? user.name : "Name"}
+                        onChangeText={text => setName(text)}
                         textContentType="name"
                         autoCapitalize = 'none'
                     />
                     <TextInput
                         style={styles.input}
-                        placeholder="Phone Number"
+                        placeholder={user.phone ? user.phone : "Phone"}
+                        onChangeText={text => setPhone(text)}
                         textContentType="telephoneNumber"
                         autoCapitalize = 'none'
                     />
                     <TextInput
                         style={styles.input}
-                        placeholder="Password"
+                        placeholder={user.password ? user.password : "Password"}
+                        onChangeText={text => setPassword(text)}
                         secureTextEntry={true}
                     />
                     <TouchableHighlight
                         style={styles.button}
+                        onPress={() => profile(name, phone, password)}
                     ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
