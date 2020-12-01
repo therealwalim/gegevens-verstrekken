@@ -25,14 +25,6 @@ export default function Profile({ navigation }) {
         .catch(error => {
           console.log(error.response);
         })
-
-        axios.get('/api/user')
-        .then(response => {
-          setName(response.data.name);
-        })
-        .catch(error => {
-          console.log(error.response);
-        })
   
     }, []);
 

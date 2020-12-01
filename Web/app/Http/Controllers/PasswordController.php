@@ -14,9 +14,13 @@ class PasswordController extends Controller
      */
     public function index()
     {
-        $passwords = Password::all();
-
-        return $passwords->toJson(JSON_PRETTY_PRINT);
+        $password = Password::where('user_id', '=', auth()->id())->get();
+        $count_password = Password::where('user_id', '=', auth()->id())->count();
+        $passwords = [
+            'password' => $password,
+            'count' => $count_password
+        ];
+        return response()->json($passwords);
     }
 
     /**

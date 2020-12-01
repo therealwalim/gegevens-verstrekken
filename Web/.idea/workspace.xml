@@ -29,10 +29,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Mobiel/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mobiel/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/src/assets/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/assets/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/src/components/app/passwords/PasswordCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/components/app/passwords/PasswordCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/app/passwords.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/app/passwords.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/app/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/app/profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PasswordController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +221,9 @@
       <workItem from="1606133598572" duration="7503000" />
       <workItem from="1606209337989" duration="17043000" />
       <workItem from="1606292619980" duration="6516000" />
-      <workItem from="1606758244125" duration="2711000" />
+      <workItem from="1606758244125" duration="3586000" />
+      <workItem from="1606817485268" duration="1601000" />
+      <workItem from="1606841324492" duration="2458000" />
     </task>
     <servers />
   </component>
