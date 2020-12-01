@@ -1,5 +1,5 @@
 import { AuthContext } from "../../providers/AuthProvider";
-import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView } from "react-native";
+import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView, FlatList } from "react-native";
 import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import Header from '../../components/app/header'
@@ -53,14 +53,23 @@ const styles = StyleSheet.create({
 
 export default function Password({ navigation }) {
     const { user, logout } = useContext(AuthContext)
-    const [name, setName] = useState(null);
+    const [password, setPassword] = useState([]);
+    const [name, setName] = useState('');
   
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
   
-      axios.get('/api/user')
+      axios.get('/api/password')
         .then(response => {
-          setName(response.data.name);
+          setPassword(response.data);
+        })
+        .catch(error => {
+          console.log(error.response);
+        })
+
+        axios.get('/api/user')
+        .then(response => {
+          setName(response.data.photo);
           console.log(name);
         })
         .catch(error => {
@@ -68,6 +77,12 @@ export default function Password({ navigation }) {
         })
   
     }, []);
+
+    if(!password){
+      return null
+    }
+
+    console.log(user.token);
   
     return (
       
@@ -78,14 +93,23 @@ export default function Password({ navigation }) {
             
             <View style={styles.titleContainer}>
                 <Text style={styles.title1}>Passwords</Text>
-                <Text style={styles.title2}>2</Text>
+                <Text style={styles.title2}>{password.count}</Text>
             </View>
 
             <ScrollView style={styles.content}>
               
               <View style={styles.CardContainer}>
-                  <PasswordCard site={"facebook"} />
+                  
+                  <FlatList
+                    data={password.password}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({item}) => <PasswordCard item={item} site={item.service} />
+                  }
+                  />
+                  
+                  {/*<PasswordCard site={"facebook"} />
                   <PasswordCard site={"spotify"} />
+                  */}
               </View>
   
             </ScrollView>

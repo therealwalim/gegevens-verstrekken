@@ -25,6 +25,14 @@ export default function Profile({ navigation }) {
         .catch(error => {
           console.log(error.response);
         })
+
+        axios.get('/api/user')
+        .then(response => {
+          setName(response.data.name);
+        })
+        .catch(error => {
+          console.log(error.response);
+        })
   
     }, []);
 
@@ -67,7 +75,7 @@ export default function Profile({ navigation }) {
                     <TouchableHighlight
                         style={styles.button}
                         onPress={() => profile(name, phone, password)}
-                    ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
+    ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
                     </TouchableHighlight>
                     <TouchableHighlight
                         style={styles.buttonlogout}

@@ -31,6 +31,7 @@ export const AuthProvider = ({children}) => {
               phone: response.data.user.phone,
               password: response.data.user.password,
               id: response.data.user.id,
+              photo: response.data.user.photo,
             }
             setUser(userResponse);
             setError(null);

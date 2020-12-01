@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { useContext }  from 'react'
 import { Text, View, Image, StyleSheet, Dimensions} from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { AuthContext } from "../../providers/AuthProvider";
 
 var width = Dimensions.get('window').width;
 
@@ -13,6 +14,9 @@ const styles = StyleSheet.create({
         padding: 24,
     },avatar:{
         alignSelf: 'flex-end',
+        width: 48,
+        height: 48,
+        borderRadius: 200,
     },logo:{
         
     },name:{
@@ -31,7 +35,14 @@ const styles = StyleSheet.create({
 })
 
 
+
+
+
+
 export default function Header({name, navigation}){
+    const { user } = useContext(AuthContext)
+    const avatarimg = `http://10.0.2.2:8000/upload/avatars/${user.photo}`;
+    console.log(user.photo);
         return (
             <View style={styles.container}>
                 <View>
@@ -43,7 +54,8 @@ export default function Header({name, navigation}){
                 </View>
                 <View>
                     <TouchableWithoutFeedback onPress={ () => navigation.navigate('Profile')}>
-                        <Image style={styles.avatar} source={require('../../assets/img/avatar.png')} />
+                        <Image style={styles.avatar} source={{ uri: avatarimg,}} />
+                        
                     </TouchableWithoutFeedback>
                 </View>
             </View>

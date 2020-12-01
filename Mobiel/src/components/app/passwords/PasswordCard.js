@@ -5,15 +5,16 @@ import Icon from 'react-native-vector-icons/FontAwesome5Pro';
 import BenjaminButton from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const service = require('../../../assets/service')
-
-export default function PasswordCard({site}) {
+export default function PasswordCard({item}) {
 
     const [hidePass, setHidePass] = useState(true);
+    const test = `${item.service}`;
 
     return (
+        
         <View style={{
             padding: 20,
-            backgroundColor: service[site].color,
+            backgroundColor: service[test].color,
             elevation: 2,
             borderRadius: 5,
             flexDirection: "row",
@@ -22,12 +23,12 @@ export default function PasswordCard({site}) {
             marginTop:5,
             marginBottom: 5,
         }}>
-            <Icon style={styles.service} name={service[site].name} size={27} color="white" />
+            <Icon style={styles.service} name={item.service} size={27} color="white" />
             <View style={styles.TextContainer}>
-                <Text style={styles.Text}>k.adesida@provi.data</Text>
+                <Text style={styles.Text}>{item.serviceid}</Text>
                 <TextInput
                 style={styles.Password}
-                value={service[site].name}
+                value={item.password}
                 editable={false} 
                 secureTextEntry={hidePass ? true : false}
                 />
@@ -59,15 +60,3 @@ const styles = StyleSheet.create({
         color: 'white',
     }
 })
-
-{
-    /* 
-
-    width: 317px;
-    height: 70px;
-    border-radius: 5px;
-    background: linear-gradient(#0882de 0%, #28a2f3 100%);
-    box-shadow: 0px 0px 16px rgba(65, 88, 208, 0.19);
-
-    */
-}

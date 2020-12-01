@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, useContext }  from 'react'
 import { Text, View, Image, StyleSheet, Dimensions, ImageBackground} from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { AuthContext } from "../../providers/AuthProvider";
 
 var width = Dimensions.get('window').width;
 
@@ -15,10 +16,14 @@ const styles = StyleSheet.create({
         backgroundColor: "blue"
     },avatar:{
         position: "absolute",
-        top: 107,
+        top: 120,
         alignSelf: "center",
         margin: 0,
         padding: 0,
+        width:70,
+        height:70,
+        borderRadius: 200,
+        zIndex: 200,
     },logo:{
         
     },name:{
@@ -42,6 +47,8 @@ const styles = StyleSheet.create({
 
 
 export default function HeaderProfile({name, navigation}){
+    const { user } = useContext(AuthContext)
+    const avatarimg = `http://10.0.2.2:8000/upload/avatars/${user.photo}`;
         return (
             <View style={styles.container}>
                 <Image source={require('../../assets/img/overlay.png')} style={styles.image} />
@@ -52,7 +59,7 @@ export default function HeaderProfile({name, navigation}){
                         <Text style={styles.plan}>Basic Plan</Text>
                     </View>
                 </View>
-                <Image style={styles.avatar} source={require('../../assets/img/avatar-big.png')} />
+                <Image style={styles.avatar} source={{ uri: avatarimg,}} />
             </View>
         );
     }
