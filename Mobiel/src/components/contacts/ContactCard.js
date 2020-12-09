@@ -2,13 +2,15 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather';
 
-export default function ContactCard() {
+export default function ContactCard({item}) {
     return (
         <View style={styles.container}>
             <Icon name="users" size={27} color="white" />
             <View style={styles.TextContainer}>
-                <Text style={styles.Text}>Lomé Saka</Text>
-                <Text style={styles.Text}>+213 (0) 384639293</Text>
+                <Text style={styles.Text}>{item.givenName}</Text>
+                {item.phoneNumbers.map(phone=>(
+                    <Text style={styles.Text}>{phone.number}</Text>
+                ))}
             </View>
         </View>
     )

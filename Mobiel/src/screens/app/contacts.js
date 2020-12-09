@@ -1,11 +1,12 @@
 import { AuthContext } from "../../providers/AuthProvider";
-import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView } from "react-native";
+import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView, PermissionsAndroid, FlatList } from "react-native";
 import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import Header from '../../components/app/header'
 import BottomBar from '../../components/app/bottombar'
 import { TouchableHighlight } from "react-native-gesture-handler";
 import ContactCard from "../../components/contacts/ContactCard";
+import con from 'react-native-contacts';
 
 axios.defaults.baseURL = 'http://10.0.2.2:8000';
 
@@ -53,22 +54,40 @@ const styles = StyleSheet.create({
 
 export default function Contact({ navigation }) {
     const { user, logout } = useContext(AuthContext)
-    const [name, setName] = useState(null);
+    const [contact, setContact] = useState([]);
+    const [count, setCount] = useState('');
   
     useEffect(() => {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
-  
-      axios.get('/api/user')
-        .then(response => {
-          setName(response.data.name);
-          console.log(name);
+      PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+        {
+          'title': 'Contacts',
+          'message': 'This app would like to view your contacts.'
+        }
+      ).then(() => {
+        con.getAll((err, contacts) => {
+          if (err === 'denied'){
+            // error
+          } else {
+            // contacts returned in Array
+            setContact(contacts);
+          }
         })
-        .catch(error => {
-          console.log(error.response);
+      })
+      .then(() => {
+        con.getCount((counts) =>{
+          setCount(counts)
         })
-  
+      })
+      .catch((err)=> {
+          console.log(err);
+      })
     }, []);
-  
+    
+    if(!contact){
+      return null
+    }
+
     return (
       
         // Header component
@@ -78,23 +97,17 @@ export default function Contact({ navigation }) {
             
             <View style={styles.titleContainer}>
                 <Text style={styles.title1}>Contacts</Text>
-                <Text style={styles.title2}>10</Text>
+                <Text style={styles.title2}>{count}</Text>
             </View>
 
             <ScrollView style={styles.content}>
               
               <View style={styles.CardContainer}>
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
-                  <ContactCard />
+              <FlatList
+                    data={contact}
+                    renderItem={({item}) => <ContactCard item={item}/>
+                  }
+                  />
               </View>
   
             </ScrollView>
