@@ -48,8 +48,6 @@ Il est essentiel aussi de créer une plateforme web pour l'utilisateur afin qu'i
 ## Technologies utilisées :
 * [React Native](https://reactnative.dev/docs/getting-started)
 * [Laravel](https://laravel.com/)
-* [Vue JS](https://vuejs.org/)
-* [Tailwind CSS](https://tailwindcss.com/)
 
 ## Librairies utilisées : (À définir)
 * [Laravel Sanctum](https://laravel.com/docs/8.x/sanctum)
