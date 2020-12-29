@@ -1,11 +1,12 @@
 import { AuthContext } from "../../providers/AuthProvider";
-import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView } from "react-native";
+import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView, PermissionsAndroid } from "react-native";
 import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import Header from '../../components/app/header'
 import BottomBar from '../../components/app/bottombar'
 import { TouchableHighlight } from "react-native-gesture-handler";
 import MessageCard from "../../components/app/messages/MessageCard";
+import SmsAndroid from 'react-native-get-sms-android';
 
 axios.defaults.baseURL = 'http://10.0.2.2:8000';
 
@@ -54,6 +55,35 @@ const styles = StyleSheet.create({
 export default function Contact({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
+    const [sms, setSms] = useState([]);
+    const [count, setCount] = useState('');
+    
+/* List SMS messages matching the filter */
+var filter = {
+  box: '', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
+
+  /**
+   *  the next 3 filters can work together, they are AND-ed
+   *  
+   *  minDate, maxDate filters work like this:
+   *    - If and only if you set a maxDate, it's like executing this SQL query:
+   *    "SELECT * from messages WHERE (other filters) AND date <= maxDate"
+   *    - Same for minDate but with "date >= minDate"
+   */
+  minDate: 1554636310165, // timestamp (in milliseconds since UNIX epoch)
+  maxDate: 1556277910456, // timestamp (in milliseconds since UNIX epoch)
+  bodyRegex: '(.*)How are you(.*)', // content regex to match
+
+  /** the next 5 filters should NOT be used together, they are OR-ed so pick one **/
+  read: 1, // 0 for unread SMS, 1 for SMS already read
+  _id: '', // specify the msg id
+  thread_id: '', // specify the conversation thread_id
+  address: '', // sender's phone number
+  body: '', // content to match
+  /** the next 2 filters can be used for pagination **/
+  indexFrom: 0, // start from index 0
+  maxCount: 10, // count of SMS to return each time
+};
   
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
@@ -66,6 +96,29 @@ export default function Contact({ navigation }) {
         .catch(error => {
           console.log(error.response);
         })
+        
+        SmsAndroid.list(
+          JSON.stringify(filter),
+          (fail) => {
+            console.log('Failed with this error: ' + fail);
+          },
+          (count, smsList) => {
+            console.log('Count: ', count);
+            console.log('List: ', smsList);
+            
+            setCount(count);
+
+            setSms(smsList);
+            console.log(sms)
+            var arr = JSON.parse(smsList);
+        
+            arr.forEach(function(object) {
+              console.log('Object: ' + object);
+              console.log('-->' + object.date);
+              console.log('-->' + object.body);
+            });
+          },
+        );
   
     }, []);
   
@@ -78,7 +131,7 @@ export default function Contact({ navigation }) {
             
             <View style={styles.titleContainer}>
                 <Text style={styles.title1}>Messages</Text>
-                <Text style={styles.title2}>10</Text>
+                <Text style={styles.title2}>{count}</Text>
             </View>
 
             <ScrollView style={styles.content}>

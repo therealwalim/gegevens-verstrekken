@@ -3,24 +3,24 @@ import { View, Text, StyleSheet } from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 
-export default function TaskCard() {
+export default function TaskCard({item}) {
     return (
         <View style={styles.container}>
             <View>
                 <View style={styles.secondContainer}>
                     <View style={styles.TextContainer}>
-                        <Text style={styles.TextTitle}>Title</Text>
+                        <Text style={styles.TextTitle}>{item.title}</Text>
                         <Text style={styles.TextDescription}>Description</Text>
                     </View>
                 </View>
                 <Text style={styles.message}>
-                    Voyez ce jeu exquis wallon, de graphie en kit mais bref. Portez ce vieux whisky au juge blond qui fume sur son île intérieure, à côté de l"alcôve ovoïde, où les bûches se consument dans l"âtre, ce qui lui permet de penser à la cænogenèse de l"être dont il est question dans la cause ambiguë entendue à Moÿ, dans un capharnaüm qui, pense-t-il, diminue çà et là la qualité de son œuvre. Prouvez, beau juge, que le fameux…
+                    {item.content}
                 </Text>
             </View>
             <View style={styles.btnContainer}>
                 
                 <TouchableHighlight style={styles.btn}>
-                    <Icon name="trash-2" size={15} color="#37F088" />
+                    <Icon name="trash-2" size={15} color="#37F088" onPress={() => console.log(item.id)}/>
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.btn}>

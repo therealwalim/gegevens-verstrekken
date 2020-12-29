@@ -1,11 +1,12 @@
 import { AuthContext } from "../../providers/AuthProvider";
-import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView } from "react-native";
+import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView, FlatList } from "react-native";
 import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import Header from '../../components/app/header'
 import BottomBar from '../../components/app/bottombar'
 import { TouchableHighlight } from "react-native-gesture-handler";
 import TaskCard from "../../components/app/tasks/TaskCard";
+import Password from "./passwords";
 
 axios.defaults.baseURL = 'http://10.0.2.2:8000';
 
@@ -54,10 +55,20 @@ const styles = StyleSheet.create({
 export default function Task({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
+    const [note, setNote] = useState([]);
   
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
   
+      axios.get('/api/note')
+        .then(response => {
+          setNote(response.data);
+          //console.log(note)
+        })
+        .catch(error => {
+          console.log(error.response);
+        })
+
       axios.get('/api/user')
         .then(response => {
           setName(response.data.name);
@@ -78,15 +89,18 @@ export default function Task({ navigation }) {
             
             <View style={styles.titleContainer}>
                 <Text style={styles.title1}>Tasks</Text>
-                <Text style={styles.title2}>10</Text>
+                <Text style={styles.title2}>{note.count}</Text>
             </View>
 
             <ScrollView style={styles.content}>
               
               <View style={styles.CardContainer}>
-                <TaskCard />
-                <TaskCard />
-                <TaskCard />
+              <FlatList
+                    data={note.note}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({item}) => <TaskCard item={item} />
+                  }
+                  />
               </View>
   
             </ScrollView>

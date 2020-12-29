@@ -188,6 +188,9 @@ dependencies {
 
     //lottie
     implementation project(':lottie-react-native')
+
+    //SMS
+    compile project(':react-native-get-sms-android')
     
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
