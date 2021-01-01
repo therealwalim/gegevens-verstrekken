@@ -87,9 +87,27 @@ input:{
 })
 
 
-export default function EditNote({ navigation }) {
+export default function EditNote({ route, navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
+    const { itemId, itemDescription, itemContent, itemTitle } = route.params;
+
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [content, setContent] = useState('');
+
+    const editPost = async (title, content) => {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
+      try {
+        axios.put(`/api/note/${itemId}`, {
+          title,
+          content
+        });
+        console.log("Post successfully deleted");
+      } catch (err) {
+        console.log(err);
+      }
+    };
   
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
@@ -113,7 +131,7 @@ export default function EditNote({ navigation }) {
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             
             <View style={styles.titleContainer}>
-                <Text style={styles.title1}>Create Note</Text>
+                <Text style={styles.title1}>{`Edit note #${itemId}`}</Text>
             </View>
 
             <ScrollView style={styles.content}>
@@ -121,22 +139,25 @@ export default function EditNote({ navigation }) {
                 <View style={styles.containerLog}>
                         <TextInput
                             style={styles.input}
-                            placeholder="Title"
+                            placeholder={itemTitle}
                             autoCapitalize = 'none'
+                            onChangeText={text => setTitle(text)}
                         />
                         <TextInput
                             style={styles.input}
-                            placeholder="Description"
+                            placeholder={itemDescription}
                             autoCapitalize = 'none'
+                            onChangeText={text => setDescription(text)}
                         />
                         <TextInput
                             style={styles.inputarea}
-                            placeholder="Content"
+                            placeholder={itemContent}
                             multiline={true}
                             numberOfLines={4}
+                            onChangeText={text => setContent(text)}
                         />
                         <TouchableHighlight
-                            style={styles.button}
+                            style={styles.button} onPress={() => editPost(title, content)}
                         ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Save</Text>
                         </TouchableHighlight>
                     </View>

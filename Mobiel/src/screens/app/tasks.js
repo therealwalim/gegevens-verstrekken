@@ -98,7 +98,7 @@ export default function Task({ navigation }) {
               <FlatList
                     data={note.note}
                     keyExtractor={(item, index) => index.toString()}
-                    renderItem={({item}) => <TaskCard item={item} />
+                    renderItem={({item}) => <TaskCard navigation={navigation} token={user.token} item={item} />
                   }
                   />
               </View>

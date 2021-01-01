@@ -2,8 +2,20 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
+import axios from 'axios';
 
-export default function TaskCard({item}) {
+export default function TaskCard({item, token, navigation}) {
+
+    const deletePost = async () => {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        try {
+          axios.delete(`/api/note/${item.id}`);
+          console.log("Post successfully deleted");
+        } catch (err) {
+          console.log("Post deletion failed");
+        }
+      };
+
     return (
         <View style={styles.container}>
             <View>
@@ -19,11 +31,19 @@ export default function TaskCard({item}) {
             </View>
             <View style={styles.btnContainer}>
                 
-                <TouchableHighlight style={styles.btn}>
-                    <Icon name="trash-2" size={15} color="#37F088" onPress={() => console.log(item.id)}/>
+                <TouchableHighlight style={styles.btn} onPress={deletePost}>
+                    <Icon name="trash-2" size={15} color="#37F088"/>
                 </TouchableHighlight>
 
-                <TouchableHighlight style={styles.btn}>
+                <TouchableHighlight style={styles.btn} onPress={() => {
+                    /* 1. Navigate to the Details route with params */
+                    navigation.navigate('EditNote', {
+                        itemId: item.id,
+                        itemDescription: "Description",
+                        itemTitle: item.title,
+                        itemContent: item.content
+                    });
+                }}>
                     <Icon name="edit" size={15} color="#37F088" />
                 </TouchableHighlight>
 
