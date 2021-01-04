@@ -29,12 +29,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Mobiel/src/assets/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/assets/service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mobiel/src/components/app/passwords/PasswordCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/components/app/passwords/PasswordCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/app/passwords.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/app/passwords.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/app/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/app/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/app/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/app/contacts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/app/tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/app/tasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/forms/uploadfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/forms/uploadfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mobiel/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NoteController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,6 +227,7 @@
       <workItem from="1606758244125" duration="3586000" />
       <workItem from="1606817485268" duration="1601000" />
       <workItem from="1606841324492" duration="2458000" />
+      <workItem from="1609781210474" duration="135000" />
     </task>
     <servers />
   </component>
@@ -266,10 +270,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="385" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1603103281346" />
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606213743134">
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609781296941">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1606213743134" />
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1609781296941" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1605957739227">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

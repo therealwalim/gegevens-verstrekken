@@ -14,9 +14,13 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::all();
-
-        return $notes->toJson(JSON_PRETTY_PRINT);
+        $note = Note::where('user_id', '=', auth()->id())->get();
+        $count_note = Note::where('user_id', '=', auth()->id())->count();
+        $notes = [
+            'note' => $note,
+            'count' => $count_note
+        ];
+        return response()->json($notes);
     }
 
     /**
