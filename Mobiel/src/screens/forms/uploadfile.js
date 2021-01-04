@@ -104,7 +104,7 @@ input:{
 export default function UploadFile({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
-  
+
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
   
@@ -127,7 +127,7 @@ export default function UploadFile({ navigation }) {
             {/* Disconnection Button <Button title="Logout" onPress={() => logout()} /> */}
             
             <View style={styles.titleContainer}>
-                <Text style={styles.title1}>Create Password</Text>
+                <Text style={styles.title1}>Upload file</Text>
             </View>
 
             <ScrollView style={styles.content}>

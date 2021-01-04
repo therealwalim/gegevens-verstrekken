@@ -63,7 +63,7 @@ export default function Task({ navigation }) {
       axios.get('/api/note')
         .then(response => {
           setNote(response.data);
-          //console.log(note)
+          console.log(user.token)
         })
         .catch(error => {
           console.log(error.response);

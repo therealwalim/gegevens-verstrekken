@@ -107,7 +107,7 @@ export default function Contact({ navigation }) {
                     data={contact}
                     renderItem={({item}) => <ContactCard item={item}/>
                   }
-                  />
+              />
               </View>
   
             </ScrollView>

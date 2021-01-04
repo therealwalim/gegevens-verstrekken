@@ -90,6 +90,25 @@ input:{
 export default function AddPassword({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
+
+    const [password, setPassword] = useState('');
+    const [service, setService] = useState('');
+    const [serviceid, setServiceid] = useState('');
+
+    const SubmitPassword = async (service, serviceid, password) => {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
+      try {
+        axios.post(`/api/password`, {
+          service,
+          serviceid,
+          password,
+          user_id: user.id
+        });
+        console.log(`Password successfully added with: ${service} and ${serviceid}`);
+      } catch (err) {
+        console.log(err);
+      }
+    };
   
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
@@ -123,20 +142,24 @@ export default function AddPassword({ navigation }) {
                             style={styles.input}
                             placeholder="Service"
                             autoCapitalize = 'none'
+                            onChangeText={text => setService(text)}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="ID"
                             autoCapitalize = 'none'
+                            onChangeText={text => setServiceid(text)}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder="Password"
                             autoCapitalize = 'none'
                             secureTextEntry={true}
+                            onChangeText={text => setPassword(text)}
                         />
                         <TouchableHighlight
                             style={styles.button}
+                            onPress={() => SubmitPassword(service, serviceid, password)}
                         ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
                         </TouchableHighlight>
                     </View>

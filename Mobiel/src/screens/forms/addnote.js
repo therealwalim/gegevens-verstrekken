@@ -91,6 +91,23 @@ export default function AddNote({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
   
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+
+    const SubmitPost = async (title, content) => {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
+      try {
+        axios.post(`/api/note`, {
+          title,
+          content,
+          user_id: user.id
+        });
+        console.log(`Post successfully added with: ${title} and ${content}`);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
   
@@ -123,6 +140,7 @@ export default function AddNote({ navigation }) {
                             style={styles.input}
                             placeholder="Title"
                             autoCapitalize = 'none'
+                            onChangeText={text => setTitle(text)}
                         />
                         <TextInput
                             style={styles.input}
@@ -134,9 +152,11 @@ export default function AddNote({ navigation }) {
                             placeholder="Content"
                             multiline={true}
                             numberOfLines={4}
+                            onChangeText={text => setContent(text)}
                         />
                         <TouchableHighlight
                             style={styles.button}
+                            onPress={() => SubmitPost(title, content)}
                         ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
                         </TouchableHighlight>
                     </View>
