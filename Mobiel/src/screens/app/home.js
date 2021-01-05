@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
 export default function Home({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
+    const [counts, setCounts] = useState([]);
   
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
@@ -107,6 +108,14 @@ export default function Home({ navigation }) {
       axios.get('/api/user')
         .then(response => {
           setName(response.data.name);
+        })
+        .catch(error => {
+          console.log(error.response);
+        })
+
+        axios.get('/api/param')
+        .then(response => {
+          setCounts(response.data);
         })
         .catch(error => {
           console.log(error.response);
@@ -129,14 +138,14 @@ export default function Home({ navigation }) {
                   <Icon name="users" size={22} color="white" />
                   <View style={styles.CardsText}>
                     <Text style={styles.CardTitle}>Number of contacts</Text>
-                    <Text style={styles.CardText}>210</Text>
+                    <Text style={styles.CardText}>{counts.contact}</Text>
                   </View>
                 </View>
                 <View style={styles.Cards}>
                   <Icon name="mail" size={22} color="white" />
                   <View style={styles.CardsText}>
                     <Text style={styles.CardTitle}>Number of messages</Text>
-                    <Text style={styles.CardText}>500</Text>
+                    <Text style={styles.CardText}>{counts.message}</Text>
                   </View>
                 </View>
               </View>

@@ -82,7 +82,7 @@ export default function Contact({ navigation }) {
       .catch((err)=> {
           console.log(err);
       })
-    })
+    }, []);
     
     if(!contact){
       return null

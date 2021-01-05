@@ -120,7 +120,7 @@ var filter = {
           },
         );
   
-      })
+      }, []);
   
     return (
       
