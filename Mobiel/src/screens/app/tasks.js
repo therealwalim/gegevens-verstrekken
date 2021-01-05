@@ -78,7 +78,7 @@ export default function Task({ navigation }) {
           console.log(error.response);
         })
   
-    }, []);
+    })
   
     return (
       

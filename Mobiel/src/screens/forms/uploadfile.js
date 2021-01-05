@@ -7,6 +7,7 @@ import BottomBar from '../../components/app/bottombar'
 import { TouchableHighlight } from "react-native-gesture-handler";
 import Icon from 'react-native-vector-icons/Feather';
 import { color } from "react-native-reanimated";
+import DocumentPicker from 'react-native-document-picker';
 
 axios.defaults.baseURL = 'http://10.0.2.2:8000';
 
@@ -100,10 +101,73 @@ input:{
   },
 })
 
-
 export default function UploadFile({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
+    const [file, setFile] = useState('Upload file');
+    const [folder, setFolder] = useState('');
+
+    const uploadImage = async () => {
+      // Check if any file is selected or not
+      if (file != null) {
+        console.log("ça marche ici");
+        // If file selected then create FormData
+        const fileToUpload = file;
+        const data = new FormData();
+        data.append('folderName', folder);
+        data.append('fileName', fileToUpload);
+        // Please change file upload URL
+        let res = await fetch(
+          `http://10.0.2.2:8000/api/file`,
+          {
+            method: 'post',
+            body: data,
+            headers: {
+              'Content-Type': 'multipart/form-data',
+              'Authorization': `Bearer ${user.token}`
+            },
+          }
+        );
+        let responseJson = await res.json();
+        if (responseJson.code == 200) {
+          console.log('Upload Successful');
+        }
+      } else {
+        // If no file selected the show alert
+        console.log('Please Select File first');
+      }
+    };
+
+    const selectFile = async () => {
+      // Opening Document Picker to select one file
+      try {
+        const res = await DocumentPicker.pick({
+          // Provide which type of file you want user to pick
+          type: [DocumentPicker.types.allFiles],
+          // There can me more options as well
+          // DocumentPicker.types.allFiles
+          // DocumentPicker.types.images
+          // DocumentPicker.types.plainText
+          // DocumentPicker.types.audio
+          // DocumentPicker.types.pdf
+        });
+        // Printing the log realted to the file
+        console.log('res : ' + JSON.stringify(res));
+        // Setting the state to show single file attributes
+        setFile(res);
+      } catch (err) {
+        setFile(null);
+        // Handling any exception (If any)
+        if (DocumentPicker.isCancel(err)) {
+          // If user canceled the document selection
+          alert('Canceled');
+        } else {
+          // For Unknown Error
+          alert('Unknown Error: ' + JSON.stringify(err));
+          throw err;
+        }
+      }
+    };
 
     useEffect(() => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
@@ -116,6 +180,8 @@ export default function UploadFile({ navigation }) {
         .catch(error => {
           console.log(error.response);
         })
+
+        console.log(file);
   
     }, []);
   
@@ -134,9 +200,9 @@ export default function UploadFile({ navigation }) {
               
                 <View style={styles.containerLog}>
                         <View style={styles.inputupload}>
-                            <Icon style={styles.icon} name="upload" size={26} color="white" />
+                            <Icon style={styles.icon} name="upload" size={26} color="white" onPress={selectFile} />
                             <TextInput
-                                value="Upload File"
+                                value={file.name}
                                 editable={false}
                                 autoCapitalize = 'none'
                                 style={styles.inputfile}
@@ -146,9 +212,11 @@ export default function UploadFile({ navigation }) {
                             style={styles.input}
                             placeholder="Folder Name"
                             autoCapitalize = 'none'
+                            onChangeText={text => setFolder(text)}
                         />
                         <TouchableHighlight
                             style={styles.button}
+                            onPress={uploadImage}
                         ><Text style={{color:'white',fontWeight:"bold",fontSize:15}}>Submit</Text>
                         </TouchableHighlight>
                     </View>

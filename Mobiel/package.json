@@ -23,6 +23,7 @@
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-contacts": "^5.2.3",
+    "react-native-document-picker": "^4.2.0",
     "react-native-dropdown-picker": "^3.7.1",
     "react-native-flags": "^1.0.0",
     "react-native-gesture-handler": "^1.8.0",
