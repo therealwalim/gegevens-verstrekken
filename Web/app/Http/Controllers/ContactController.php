@@ -28,16 +28,30 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new Contact();
+        /*$contact = new Contact();
         $contact->name = $request->name;
         $contact->phone = $request->phone;
         $contact->email = $request->email;
         $contact->users_id = $request->user_id;
         $contact->save();
+        */
+        //$mydata = $request->all();
+        //$json = json_decode($mydata, true);
 
+        foreach ($request->json()->all() as $record) {
+            $contact = new Contact();
+            $contact->name = $record['name'];
+            $contact->phone = $record['phone'];
+            $contact->users_id = $record['users_id'];
+            $contact->save();
+        }
+
+        //Contact::insert($json);
+        //$data = dd($request->all());
+        //$data = $request->json()->all();
         return response()->json([
             "code" => 200,
-            "message" => "Contact added successfully"
+            "message" => "Contacts added successfully"
         ]);
     }
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Message;
 use App\Models\Param;
 use Illuminate\Http\Request;
 
@@ -14,8 +16,13 @@ class ParamController extends Controller
      */
     public function index()
     {
-        $params = Param::all();
-        return $params->toJson(JSON_PRETTY_PRINT);
+        $count_con = Contact::where('users_id', '=', auth()->id())->count();
+        $count_msg = Message::where('user_id', '=', auth()->id())->count();
+        $data = [
+            'contact' => $count_con,
+            'message' => $count_msg
+        ];
+        return response()->json($data);
     }
 
     /**
