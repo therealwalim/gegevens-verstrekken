@@ -76,7 +76,7 @@ export default function Password({ navigation }) {
           console.log(error.response);
         })
   
-      })
+      }, [])
 
     if(!password){
       return null
