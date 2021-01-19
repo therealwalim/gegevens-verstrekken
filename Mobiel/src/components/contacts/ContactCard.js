@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Feather';
 export default function ContactCard({item}) {
     return (
         <View style={styles.container}>
-            <Icon name="users" size={27} color="white" />
+            <Icon name="users" size={27} color="white"/>
             <View style={styles.TextContainer}>
                 <Text style={styles.Text}>{item.givenName}</Text>
                 {item.phoneNumbers.map(phone=>(
