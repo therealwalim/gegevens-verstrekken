@@ -29,10 +29,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391564b3-4fc6-45b8-9068-680bac8c63f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Mobiel/src/screens/app/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobiel/src/screens/app/contacts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/addpassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/addpassword.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +224,8 @@
       <workItem from="1606841324492" duration="2458000" />
       <workItem from="1609781210474" duration="2035000" />
       <workItem from="1609860120758" duration="2528000" />
-      <workItem from="1611051171092" duration="8618000" />
+      <workItem from="1611051171092" duration="9815000" />
+      <workItem from="1611134594522" duration="2212000" />
     </task>
     <servers />
   </component>
@@ -267,10 +268,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="385" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1603103281346" />
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609863833723">
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611147674025">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1609863833723" />
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1611147674025" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1605957739227">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

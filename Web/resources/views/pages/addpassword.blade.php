@@ -57,7 +57,7 @@
     <script>
 
         // Set menu active
-        var element = document.getElementById("Tasks");
+        var element = document.getElementById("Passwords");
         element.classList.add("active");
 
         // Hide card test

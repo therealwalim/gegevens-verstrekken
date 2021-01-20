@@ -14,9 +14,13 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
-
-        return $messages->toJson(JSON_PRETTY_PRINT);
+        $message = Message::where('user_id', '=', auth()->id())->get();
+        $count_message = Message::where('user_id', '=', auth()->id())->count();
+        $messages = [
+            'message' => $message,
+            'count' => $count_message
+        ];
+        return response()->json($messages);
     }
 
     /**
