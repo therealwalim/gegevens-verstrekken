@@ -120,6 +120,8 @@ export default function Home({ navigation }) {
         .catch(error => {
           console.log(error.response);
         })
+
+        console.log(`Token for testing is : ${user.token}`)
   
     }, []);
   
@@ -215,29 +217,3 @@ export default function Home({ navigation }) {
         
     );
   }
-
-  {
-    /*<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Dashboard Screen Logged In View</Text>
-    <Text>User: {user.email}</Text>
-    <Text>User from Server: {name}</Text>
-    <Button title="Go to Settings" onPress={() => navigation.navigate('Settings')} />
-  
-    </View>
-    
-    width: 156px;
-    height: 63px;
-    border-radius: 5px;
-    background: #4158d0;
-    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.07);
-
-fontFamily: Montserrat,
-fontWeight: "bold",
-fontSize: 10,
-color: "#3f3d56",
-opacity: .78,
-
-
-    
-    */
-    }

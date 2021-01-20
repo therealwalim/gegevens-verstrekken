@@ -111,8 +111,3 @@ export default function Task({ navigation }) {
         
     );
   }
-
-{/*
-
-*/
-}

@@ -34,15 +34,9 @@ const styles = StyleSheet.create({
     }
 })
 
-
-
-
-
-
 export default function Header({name, navigation}){
     const { user } = useContext(AuthContext)
     const avatarimg = `http://10.0.2.2:8000/upload/avatars/${user.photo}`;
-    console.log(user.photo);
         return (
             <View style={styles.container}>
                 <View>

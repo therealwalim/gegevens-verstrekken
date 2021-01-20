@@ -1,5 +1,5 @@
 import { AuthContext } from "../../providers/AuthProvider";
-import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView, PermissionsAndroid } from "react-native";
+import { Button, Text, View, Image, StyleSheet, Dimensions, ScrollView, PermissionsAndroid, FlatList } from "react-native";
 import React, { useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import Header from '../../components/app/header'
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
 export default function Contact({ navigation }) {
     const { user, logout } = useContext(AuthContext)
     const [name, setName] = useState(null);
-    const [sms, setSms] = useState([]);
+    const [message, setMessage] = useState([]);
     const [count, setCount] = useState('');
     
 /* List SMS messages matching the filter */
@@ -96,6 +96,15 @@ var filter = {
         .catch(error => {
           console.log(error.response);
         })
+
+        axios.get('/api/message')
+        .then(response => {
+          setMessage(response.data);
+          console.log(response.data)
+        })
+        .catch(error => {
+          console.log(error.response);
+        })
         
         SmsAndroid.list(
           JSON.stringify(filter),
@@ -108,8 +117,6 @@ var filter = {
             
             setCount(count);
 
-            setSms(smsList);
-            console.log(sms)
             var arr = JSON.parse(smsList);
         
             arr.forEach(function(object) {
@@ -131,14 +138,19 @@ var filter = {
             
             <View style={styles.titleContainer}>
                 <Text style={styles.title1}>Messages</Text>
-                <Text style={styles.title2}>{count}</Text>
+                <Text style={styles.title2}>{message.count}</Text>
             </View>
 
             <ScrollView style={styles.content}>
               
               <View style={styles.CardContainer}>
-                 <MessageCard />
                  
+              <FlatList
+                    data={message.message}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({item}) => <MessageCard navigation={navigation} item={item} />
+                  }
+                  />
               </View>
   
             </ScrollView>

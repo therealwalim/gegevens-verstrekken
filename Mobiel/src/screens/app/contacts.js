@@ -72,9 +72,6 @@ export default function Contact({ navigation }) {
     const [count, setCount] = useState('');
   
     //console.log(utility.con)
-    const uticontact = utility;
-
-    console.log(utility)
 
     const SubmitCon = async () => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
@@ -157,13 +154,5 @@ export default function Contact({ navigation }) {
             </ScrollView>
             <BottomBar style={styles.footer} navigation={navigation} />
         </View>
-
-        
-        
     );
   }
-
-{/*
-
-*/
-}

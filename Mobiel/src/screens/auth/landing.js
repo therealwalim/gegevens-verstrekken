@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         width: 260,
         padding: 15,
         borderRadius: 5,
-        backgroundColor: '#4267B2',
+        backgroundColor: '#f8f8f8',
         borderWidth: 1,
         borderColor: 'rgba(0, 0, 0, 0.05)',
         shadowColor: "#000",
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.21,
         shadowRadius: 9.11,
         elevation: 3,
-        alignItems: 'center',
         flexDirection: 'row',
+        alignItems: 'center',
     },icon:{
         marginRight: 20,
     }
@@ -91,13 +91,13 @@ export default function landing({ navigation }) {
                     <Text style={styles.carouselDescription}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy sed diam nonumy</Text>
                 </View>
                 <View style={styles.buttons}>
-                    <TouchableOpacity style={styles.buttoncontainer} onPress={() => navigation.navigate('Login')}>
+                    <TouchableOpacity style={styles.buttoncontainer} onPress={() => navigation.navigate('Register')}>
                         <Image style={styles.icon} source={require('../../assets/img/mail-icon.png')} />
                         <Text style={tailwind('pr-5 text-black font-bold')}>Register with e-mail</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttoncontainer2}>
-                        <Image style={styles.icon} source={require('../../assets/img/fb-icon.png')} />
-                        <Text style={styles.spacingButton} style={tailwind('text-white font-bold')}>Connect with Facebook</Text>
+                    <TouchableOpacity style={styles.buttoncontainer2} onPress={() => navigation.navigate('Login')}>
+                        <Image style={styles.icon} source={require('../../assets/img/mylogin-icon.png')} />
+                        <Text style={styles.spacingButton} style={tailwind('pr-5 text-black font-bold')}>Login to Providata</Text>
                     </TouchableOpacity>
                 </View>
             </View>
