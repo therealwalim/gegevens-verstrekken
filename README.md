@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/therealwalim/gegevens-verstrekken"><img width="300" height="100" src="https://i.imgur.com/Jwv9Q8D.png"></a>
+  <a href="https://github.com/therealwalim/gegevens-verstrekken"><img width="300" height="100" src="https://i.imgur.com/FRBnp8R.png"></a>
 </p>
 
 # Provision of Relevant Data
