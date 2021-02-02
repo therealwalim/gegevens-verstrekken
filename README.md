@@ -16,16 +16,13 @@
 ## Features : 
 * On the user side, a mobile application that will contain the following features:
   * Classic authentication system with e-mail address.
-  * Ability to authenticate using a third party application (Facebook, Google or other).
   * Account verification system.
   * E-mail notification system.
-  * Synchronization of contacts and messages.
+  * Synchronization of contacts.
   * Password manager.
   * Create, edit, read and delete notes.
   * Backup files.
   * Saving albums for pictures.
-  * Saving e-book.
-  * Accessing settings.
   * Profile management.
 
 It is also essential to create a web platform for the user to retrieve and update their data that will contain practically the same functionalities as the mobile application.
@@ -33,17 +30,11 @@ It is also essential to create a web platform for the user to retrieve and updat
 * Director
   * Dashboard
   * User management
-  * Data management
-  * History
-  * Pack management
-  * Parameter management.
 
 ## Diagram of the database
 <p align="center">
   <a href="https://github.com/therealwalim/gegevens-verstrekken"><img height="400px" src="https://i.imgur.com/sZSv7Md.png"></a>
 </p>
-
-## Promotional video available on [the following link](https://youtu.be/vljVTgKvang)
 
 ## Technologies used :
 * [React Native](https://reactnative.dev/docs/getting-started)
